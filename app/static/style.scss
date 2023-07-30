@@ -1,0 +1,1554 @@
+/*全域設定*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+/*index以及通用樣板設定*/
+//導覽列設定
+header {
+  display: flex;
+  align-items: center;
+  background-color: #232c33;
+  div.logo {
+    display: flex;
+    align-items: center;
+    flex: 5 1 400px;
+    h1 {
+      color: #ff7f51;
+      div {
+        color: #ede7b1;
+      }
+    }
+    img {
+      width: 6vw;
+      height: 6vw;
+    }
+  }
+  nav {
+    flex: 2 1 400px;
+    ul {
+      display: flex;
+      list-style-type: none;
+      justify-content: space-around;
+      li {
+        a {
+          color: gray;
+          text-decoration: none;
+          font-size: 2rem;
+        }
+        a:hover {
+          color: #fbfff1;
+        }
+      }
+    }
+  }
+}
+
+//文章輸入框以及設定欄位
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-image: linear-gradient(135deg, wheat, #fcfcff, #dbfcff);
+  section.left {
+    width: 65%;
+    padding: 1rem;
+    text-align: center;
+    div {
+      text-align: left;
+      label {
+        font-size: 1.5rem;
+      }
+    }
+    form {
+      textarea {
+        width: 100%;
+        height: 400px;
+        font-size: 1.2rem;
+        resize: vertical;
+      }
+      .inputButton {
+        padding: 10px 30px;
+        margin-top: 1rem;
+        border: none;
+        border-radius: 5%;
+        background-color: #008cba;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+      .inputButton:hover {
+        background-color: #0178a0;
+        font-weight: bolder;
+        box-shadow: inset;
+      }
+      .inputButtonDisabled {
+        padding: 10px 30px;
+        margin-top: 1rem;
+        border: none;
+        border-radius: 5%;
+        background-color: grey;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+    }
+  }
+  section.right {
+    width: 35%;
+    text-align: center;
+    div.function_container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      button.function {
+        background-color: #f3f9e3;
+        border: 0.1rem solid;
+        width: 85%;
+        margin: 0.5rem;
+        text-align: center;
+        border-radius: 6px;
+        div {
+          font-size: 1.5rem;
+        }
+        img {
+          width: 3rem;
+          height: 3rem;
+          margin-top: 0.5rem;
+        }
+      }
+      button:hover {
+        background-color: #294d82;
+        font-weight: bolder;
+        box-shadow: inset;
+        cursor: pointer;
+        div {
+          color: #dbfcff;
+        }
+      }
+    }
+  }
+}
+
+//註腳
+footer {
+  background-color: #8e9aaf;
+  text-align: center;
+  p {
+    color: #e4ebe2;
+    font-size: 0.8rem;
+  }
+}
+
+//目前所在頁面、功能樣式設定
+.active {
+  color: white;
+  font-weight: bolder;
+}
+
+button.function_active {
+  background-color: #294d82;
+  box-shadow: inset;
+  width: 85%;
+  margin: 0.5rem;
+  text-align: center;
+  border-radius: 5%;
+  div {
+    color: #dbfcff;
+    font-size: 1.6rem;
+  }
+  img {
+    width: 3rem;
+    height: 3rem;
+    margin-top: 0.5rem;
+  }
+}
+
+div.voiceOption {
+  display: block;
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span {
+      font-size: 1.5rem;
+    }
+    img {
+      width: 35px;
+      height: 35px;
+    }
+  }
+  select {
+    background-color: DodgerBlue;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0.5px;
+  }
+}
+
+/*幫助頁面*/
+div#helpContainer {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  div.helpItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px 15px 10px 15px;
+    div.item {
+      width: 30%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      text-align: justify;
+      flex-direction: column;
+      margin: 10px 15px 10px 15px;
+      img {
+        width: 12vw;
+        height: 12vw;
+        margin: 3rem 0rem;
+      }
+      div {
+        font-size: 2rem;
+        font-weight: bolder;
+        height: 2rem;
+        margin-bottom: 2rem;
+      }
+      p {
+        font-size: 1.2rem;
+        height: 3rem;
+      }
+    }
+  }
+}
+
+/*單字頁面*/
+div#vocabularyRefer {
+  margin: 30px 0px 0px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  div {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #376996;
+    a {
+      color: #ffad69;
+      text-decoration: underline;
+    }
+    a:hover {
+      color: #fa7609;
+    }
+  }
+}
+table#vocabularyContainer {
+  margin: 20px 10px;
+  padding: 10px 5px;
+  tr {
+    th {
+      border-bottom: 2px solid #ede6e3;
+    }
+    td {
+      border-bottom: 2px solid #ede6e3;
+    }
+  }
+  tr:nth-child(1) {
+    font-size: 1.2rem;
+    color: #14699e;
+    text-align: center;
+  }
+}
+
+/*關於頁面*/
+div.aboutContainer {
+  margin: 20px 10px;
+  padding: 10px 5px;
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0px 0px 20px 0px;
+    padding: 10px 20px 10px 20px;
+    img {
+      width: 16vw;
+      height: 16vw;
+    }
+    h1 {
+      background-image: linear-gradient(to left, #53f20f, #f1c40f);
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+    div.content {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      font-size: 1.4rem;
+    }
+  }
+}
+div.referContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  hr {
+    width: 70%;
+  }
+  a {
+    color: #ffad69;
+    text-decoration: underline;
+  }
+}
+
+/*翻譯功能頁面*/
+div.transalte_output_container {
+  text-align: center;
+  background-image: linear-gradient(135deg, #dbfcff, #fcfcff, wheat);
+  p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+  div.translate_container {
+    text-align: center;
+    p.translate {
+      border: solid #3e517a;
+      border-width: 2px;
+      border-style: inset;
+      padding: 3rem;
+      margin: 0rem 2rem 0.5rem 2rem;
+      text-align: justify;
+      font-size: 1.2rem;
+      overflow: visible;
+    }
+  }
+  div.tools {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    div.leftTool {
+      width: 46%;
+      display: flex;
+      justify-content: flex-start;
+    }
+    div.rightTool {
+      width: 46%;
+      display: flex;
+      justify-content: flex-end;
+    }
+    button {
+      background-color: #f9c80e;
+      color: black;
+      border: none;
+      border-radius: 5%;
+      padding: 10px 30px;
+      margin: 0rem 2rem 0rem 2rem;
+      text-align: center;
+      font-size: 1.5rem;
+      cursor: pointer;
+      i {
+        display: none;
+        color: white;
+      }
+      img {
+        width: 2rem;
+        height: 2rem;
+        vertical-align: middle;
+      }
+    }
+    button:hover {
+      box-shadow: inset;
+      background-color: #d9ae13;
+    }
+  }
+}
+
+div.wordcloud {
+  display: none;
+  text-align: center;
+  background-image: linear-gradient(
+    135deg,
+    #ccf4ce,
+    white,
+    white,
+    white,
+    rgb(209, 211, 248)
+  );
+  label {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  img {
+    display: block;
+    margin: auto;
+    width: 800px;
+    height: 400px;
+  }
+}
+
+//逐句翻譯功能
+div#translateForeach {
+  background-image: linear-gradient(90deg, #081e2b, #14699e);
+  p {
+    font-size: 1.5rem;
+    color: #f1f6b7;
+    text-align: center;
+  }
+  div.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    div.sentences {
+      padding: 1rem;
+      width: 70%;
+      text-align: justify;
+      font-size: 1.2rem;
+      color: #dbfcff;
+    }
+    div.audio {
+      padding: 0rem 1rem 1rem 0rem;
+      width: 30%;
+      text-align: center;
+    }
+  }
+  hr {
+    width: 96%;
+    margin: auto;
+    border-top: 0.5px solid greenyellow;
+  }
+}
+
+/*英文摘要功能頁面*/
+div.summarize_container_en {
+  text-align: center;
+  background-image: linear-gradient(135deg, #dbfcff, #fcfcff, wheat);
+  hr {
+    margin-bottom: 1rem;
+  }
+  div {
+    div.original_text_container {
+      text-align: center;
+      label {
+        text-align: center;
+        font-size: 1.5rem;
+      }
+      p.original_text {
+        border: solid #3e517a;
+        border-width: 2px;
+        border-style: inset;
+        padding: 3rem;
+        margin: 0rem 2rem 0.5rem 2rem;
+        text-align: justify;
+        font-size: 1.2rem;
+        overflow: visible;
+      }
+    }
+    div.tools {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      div.leftTool {
+        width: 46%;
+        display: flex;
+        justify-content: flex-start;
+      }
+      div.rightTool {
+        width: 46%;
+        display: flex;
+        justify-content: flex-end;
+      }
+      button {
+        background-color: #f9c80e;
+        color: black;
+        border: none;
+        border-radius: 5%;
+        padding: 10px 30px;
+        margin: 0rem 2rem 0rem 2rem;
+        text-align: center;
+        font-size: 1.5rem;
+        cursor: pointer;
+        i {
+          display: none;
+          color: white;
+        }
+        img {
+          width: 2rem;
+          height: 2rem;
+          vertical-align: middle;
+        }
+      }
+      button:hover {
+        box-shadow: inset;
+        background-color: #d9ae13;
+      }
+    }
+    div.summary_container {
+      text-align: center;
+      label {
+        text-align: center;
+        font-size: 1.5rem;
+      }
+      p.summary {
+        border: solid #3e517a;
+        border-width: 2px;
+        border-style: inset;
+        padding: 3rem;
+        margin: 0rem 2rem 0.5rem 2rem;
+        text-align: justify;
+        font-size: 1.2rem;
+        overflow: visible;
+      }
+    }
+  }
+}
+
+/*中文摘要功能頁面*/
+div.summarize_container_ch {
+  text-align: center;
+  background-image: linear-gradient(135deg, #dbfcff, #fcfcff, wheat);
+  hr {
+    margin-bottom: 1rem;
+  }
+  div {
+    div.original_text_container {
+      text-align: center;
+      label {
+        text-align: center;
+        font-size: 1.5rem;
+      }
+      p.original_text {
+        border: solid #3e517a;
+        border-width: 2px;
+        border-style: inset;
+        padding: 3rem;
+        margin: 0rem 2rem 0.5rem 2rem;
+        text-align: justify;
+        font-size: 1.2rem;
+        overflow: visible;
+      }
+    }
+    div.tools {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      div.leftTool {
+        width: 46%;
+        display: flex;
+        justify-content: flex-start;
+      }
+      div.rightTool {
+        width: 46%;
+        display: flex;
+        justify-content: flex-end;
+      }
+      button {
+        background-color: #f9c80e;
+        color: black;
+        border: none;
+        border-radius: 5%;
+        padding: 10px 30px;
+        margin: 0rem 2rem 0rem 2rem;
+        text-align: center;
+        font-size: 1.5rem;
+        cursor: pointer;
+        i {
+          display: none;
+          color: white;
+        }
+        img {
+          width: 2rem;
+          height: 2rem;
+          vertical-align: middle;
+        }
+      }
+      button:hover {
+        box-shadow: inset;
+        background-color: #d9ae13;
+      }
+    }
+    div.summary_container {
+      text-align: center;
+      label {
+        text-align: center;
+        font-size: 1.5rem;
+      }
+      p.summary {
+        border: solid #3e517a;
+        border-width: 2px;
+        border-style: inset;
+        padding: 3rem;
+        margin: 0rem 2rem 0.5rem 2rem;
+        text-align: justify;
+        font-size: 1.2rem;
+        overflow: visible;
+      }
+    }
+  }
+}
+
+/*翻譯並摘要功能頁面*/
+//中翻英並自動摘要
+div.TranslateSummarize_output_ch2en_container {
+  text-align: center;
+  background-image: linear-gradient(135deg, #dbfcff, #fcfcff, wheat);
+  hr {
+    margin-bottom: 1rem;
+  }
+  div {
+    div.translate_container {
+      text-align: center;
+      label {
+        text-align: center;
+        font-size: 1.5rem;
+      }
+      p.translate {
+        border: solid #3e517a;
+        border-width: 2px;
+        border-style: inset;
+        padding: 3rem;
+        margin: 0rem 2rem 0.5rem 2rem;
+        text-align: justify;
+        font-size: 1.2rem;
+        overflow: visible;
+      }
+    }
+    div.tools {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      div.leftTool {
+        width: 46%;
+        display: flex;
+        justify-content: flex-start;
+      }
+      div.rightTool {
+        width: 46%;
+        display: flex;
+        justify-content: flex-end;
+      }
+      button {
+        background-color: #f9c80e;
+        color: black;
+        border: none;
+        border-radius: 5%;
+        padding: 10px 30px;
+        margin: 0rem 2rem 0rem 2rem;
+        text-align: center;
+        font-size: 1.5rem;
+        cursor: pointer;
+        i {
+          display: none;
+          color: white;
+        }
+        img {
+          width: 2rem;
+          height: 2rem;
+          vertical-align: middle;
+        }
+      }
+      button:hover {
+        box-shadow: inset;
+        background-color: #d9ae13;
+      }
+    }
+    div.summarize_container {
+      text-align: center;
+      label {
+        text-align: center;
+        font-size: 1.5rem;
+      }
+      p.summarize {
+        border: solid #3e517a;
+        border-width: 2px;
+        border-style: inset;
+        padding: 3rem;
+        margin: 0rem 2rem 0.5rem 2rem;
+        text-align: justify;
+        font-size: 1.2rem;
+        overflow: visible;
+      }
+    }
+  }
+}
+
+//英翻中並自動摘要
+div.TranslateSummarize_output_en2ch_container {
+  text-align: center;
+  background-image: linear-gradient(135deg, #dbfcff, #fcfcff, wheat);
+  hr {
+    margin-bottom: 1rem;
+  }
+  div {
+    div.translate_container {
+      text-align: center;
+      label {
+        text-align: center;
+        font-size: 1.5rem;
+      }
+      p.translate {
+        border: solid #3e517a;
+        border-width: 2px;
+        border-style: inset;
+        padding: 3rem;
+        margin: 0rem 2rem 0.5rem 2rem;
+        text-align: justify;
+        font-size: 1.2rem;
+        overflow: visible;
+      }
+    }
+    div.tools {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      div.leftTool {
+        width: 46%;
+        display: flex;
+        justify-content: flex-start;
+      }
+      div.rightTool {
+        width: 46%;
+        display: flex;
+        justify-content: flex-end;
+      }
+      button {
+        background-color: #f9c80e;
+        color: black;
+        border: none;
+        border-radius: 5%;
+        padding: 10px 30px;
+        margin: 0rem 2rem 0rem 2rem;
+        text-align: center;
+        font-size: 1.5rem;
+        cursor: pointer;
+        i {
+          display: none;
+          color: white;
+        }
+        img {
+          width: 2rem;
+          height: 2rem;
+          vertical-align: middle;
+        }
+      }
+      button:hover {
+        box-shadow: inset;
+        background-color: #d9ae13;
+      }
+    }
+    div.summarize_container {
+      text-align: center;
+      label {
+        text-align: center;
+        font-size: 1.5rem;
+      }
+      p.summarize {
+        border: solid #3e517a;
+        border-width: 2px;
+        border-style: inset;
+        padding: 3rem;
+        margin: 0rem 2rem 0.5rem 2rem;
+        text-align: justify;
+        font-size: 1.2rem;
+        overflow: visible;
+      }
+    }
+  }
+}
+
+//highlight Setting
+mark {
+  background-color: #fffdaf;
+}
+
+//Tooltips Setting
+a.tooltip {
+  position: relative;
+  color: red;
+  font-size: inherit;
+  font-weight: bolder;
+  white-space: pre-wrap;
+  text-decoration: none;
+}
+a.tooltip::after {
+  position: absolute;
+  width: 15em;
+  background-color: #353436;
+  content: attr(word) "  " attr(phonetic) "\A"attr(enExample) "\A"attr(
+      chExample
+    );
+  padding: 0em 0em 0em 1em;
+  color: white;
+  margin: auto;
+  left: -6em;
+  right: 0;
+  bottom: 1.2rem;
+  text-align: start;
+  border-radius: 0.2em;
+}
+a.tooltip::after {
+  display: none;
+}
+a.tooltip:hover:after {
+  display: block;
+}
+
+//Dictionary Setting
+.dictionaryWrapper {
+  display: none;
+  position: fixed;
+  bottom: 8%;
+  right: 0;
+  width: 350px;
+  background: linear-gradient(
+    89.1deg,
+    rgb(251, 0, 83) 15.2%,
+    rgb(179, 146, 231) 98.5%
+  );
+  border-radius: 10px;
+  padding: 5px 0px 5px 0px;
+  .chooseDictionary {
+    display: block;
+    margin: 10px;
+    .dictionaryContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px;
+      div {
+        display: block;
+        text-align: center;
+        img {
+          width: 70px;
+          height: 70px;
+        }
+        .dictionaryOption {
+          background: #16db65;
+          border: none;
+          border-radius: 6px;
+          box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+          box-sizing: border-box;
+          color: black;
+          cursor: pointer;
+          display: inline-block;
+          font-size: 16px;
+          line-height: 14px;
+          min-height: 30px;
+          outline: 0;
+          padding: 8px 10px;
+          text-align: center;
+          text-rendering: geometricprecision;
+          text-transform: none;
+          user-select: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+          vertical-align: middle;
+        }
+
+        .dictionaryOption:hover,
+        .dictionaryActive {
+          background: #302097;
+          border: none;
+          border-radius: 6px;
+          box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+          box-sizing: border-box;
+          color: white;
+          cursor: pointer;
+          display: inline-block;
+          font-size: 16px;
+          line-height: 14px;
+          min-height: 30px;
+          outline: 0;
+          padding: 8px 10px;
+          text-align: center;
+          text-rendering: geometricprecision;
+          text-transform: none;
+          user-select: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .search {
+      position: relative;
+      display: inline-block;
+      text-align: center;
+      margin: 5px 0px 5px 0px;
+      input {
+        padding-left: 10px;
+        width: 300px;
+        height: 30px;
+      }
+      input:focus {
+        border: 2px solid #0096ff;
+      }
+      input::placeholder {
+        color: #998fc7;
+      }
+      span#searchIcon {
+        cursor: pointer;
+        position: absolute;
+        right: 30px;
+        top: calc(50% - 0.5em);
+      }
+      span#closeIcon {
+        cursor: pointer;
+        position: absolute;
+        right: 3px;
+        top: calc(50% - 0.5em);
+      }
+    }
+  }
+  .info-text {
+    text-align: center;
+    font-size: 14px;
+    margin: 1px 0px 1px 0px;
+    color: black;
+  }
+}
+.dictionaryButton {
+  display: block;
+  position: fixed;
+  bottom: 2%;
+  right: 1%;
+  text-align: center;
+  width: 6rem;
+  cursor: pointer;
+  background: linear-gradient(to top, #b224ef 0%, #7579ff 100%);
+  color: black;
+  padding: 5px;
+  border-radius: 10px;
+}
+.dictionaryButton :hover,
+.dictionaryButtonActive {
+  display: block;
+  position: fixed;
+  bottom: 2%;
+  right: 1%;
+  text-align: center;
+  width: 6rem;
+  cursor: pointer;
+  background: linear-gradient(to top, #551172 0%, #3d42c2 100%);
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/*RWD設定*/
+@media screen and (max-width: 1200px) {
+  /*index以及通用樣板設定*/
+  //導覽列設定
+  header {
+    div.logo {
+      margin-left: 0.2rem;
+      img {
+        width: 8vw;
+        height: 8vw;
+      }
+      h1 {
+        font-size: 1.5rem;
+        div {
+          font-size: 1rem;
+        }
+      }
+    }
+    nav {
+      ul {
+        li {
+          a {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+  //文章輸入框以及設定欄位
+  main {
+    section.left {
+      div {
+        label {
+          font-size: 1rem;
+        }
+      }
+      form {
+        textarea {
+          font-size: 1rem;
+        }
+        input {
+          font-size: 1.2rem;
+        }
+      }
+    }
+    section.right {
+      div.function_container {
+        button.function {
+          div {
+            font-size: 1.2rem;
+          }
+          img {
+            width: 1.8rem;
+            height: 1.8rem;
+          }
+        }
+      }
+    }
+  }
+  //目前功能樣式設定
+  button.function_active {
+    div {
+      font-size: 1.2rem;
+    }
+    img {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  /*翻譯功能頁面*/
+  div.transalte_output_container {
+    p {
+      font-size: 1rem;
+    }
+    div.translate_container {
+      p.translate {
+        font-size: 1rem;
+      }
+    }
+    div.tools {
+      button {
+        font-size: 1rem;
+      }
+    }
+  }
+  //逐句翻譯功能
+  div#translateForeach {
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  /*英文摘要功能頁面*/
+  div.summarize_container_en {
+    div {
+      div.original_text_container {
+        label {
+          font-size: 1rem;
+        }
+        p.original_text {
+          font-size: 1rem;
+        }
+      }
+      div.tools {
+        button {
+          font-size: 1rem;
+        }
+      }
+      div.summary_container {
+        label {
+          font-size: 1rem;
+        }
+        p.summary {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  /*中文摘要功能頁面*/
+  div.summarize_container_ch {
+    div {
+      div.original_text_container {
+        label {
+          font-size: 1rem;
+        }
+        p.original_text {
+          font-size: 1rem;
+        }
+      }
+      div.tools {
+        button {
+          font-size: 1rem;
+        }
+      }
+      div.summary_container {
+        label {
+          font-size: 1rem;
+        }
+        p.summary {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  /*翻譯並摘要功能頁面*/
+  //中翻英並自動摘要
+  div.TranslateSummarize_output_ch2en_container {
+    div {
+      div.translate_container {
+        label {
+          font-size: 1rem;
+        }
+        p.translate {
+          font-size: 1rem;
+        }
+      }
+      div.tools {
+        button {
+          font-size: 1rem;
+        }
+      }
+      div.summarize_container {
+        label {
+          font-size: 1rem;
+        }
+        p.summarize {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  //英翻中並自動摘要
+  div.TranslateSummarize_output_en2ch_container {
+    div {
+      div.translate_container {
+        label {
+          font-size: 1rem;
+        }
+        p.translate {
+          font-size: 1rem;
+        }
+      }
+      div.summarize_container {
+        label {
+          font-size: 1rem;
+        }
+        p.summarize {
+          font-size: 1rem;
+        }
+      }
+    }
+    div.tools {
+      button {
+        font-size: 1rem;
+      }
+    }
+  }
+  /*幫助頁面*/
+  div#helpContainer {
+    div.helpItem {
+      div.item {
+        width: 32%;
+        margin: 2px;
+        img {
+          width: 20vw;
+          height: 20vw;
+        }
+        div {
+          height: 1.5rem;
+          font-size: 1.5rem;
+        }
+        p {
+          font-size: 1rem;
+          height: 3rem;
+        }
+      }
+    }
+  }
+  //Word Cloud
+  div.wordcloud {
+    img {
+      display: block;
+      margin: auto;
+      width: 600px;
+      height: 300px;
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  /*index以及通用樣板設定*/
+  //導覽列設定
+  header {
+    div.logo {
+      margin-left: 0.2rem;
+      img {
+        width: 8vw;
+        height: 8vw;
+      }
+      h1 {
+        font-size: 1.5rem;
+        div {
+          font-size: 1rem;
+        }
+      }
+    }
+    nav {
+      ul {
+        li {
+          a {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+  //文章輸入框以及設定欄位
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    section.left {
+      width: 100%;
+      div {
+        label {
+          font-size: 1rem;
+        }
+      }
+      form {
+        textarea {
+          font-size: 1rem;
+        }
+        input {
+          padding: 5px 10px;
+          font-size: 1.2rem;
+        }
+      }
+    }
+    section.right {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      div.function_container {
+        width: 95%;
+        button.function {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 95%;
+          margin: 0rem 0.2rem 0.2rem 0.2rem;
+          div {
+            font-size: 1.2rem;
+          }
+          img {
+            width: 1.6rem;
+            height: 1.6rem;
+          }
+        }
+      }
+    }
+  }
+  //目前功能樣式設定
+  button.function_active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    margin: 0rem 0.2rem 0.2rem 0.2rem;
+    background-color: #294d82;
+    box-shadow: inset;
+    border-radius: 6px;
+    div {
+      color: #dbfcff;
+      font-size: 1.2rem;
+    }
+    img {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+  }
+
+  /*翻譯功能頁面*/
+  div.transalte_output_container {
+    p {
+      font-size: 1rem;
+    }
+    div.translate_container {
+      p.translate {
+        font-size: 1rem;
+      }
+    }
+    div.tools {
+      flex-direction: column;
+      flex-wrap: wrap;
+      div.leftTool {
+        width: 95%;
+        justify-content: center;
+      }
+      div.rightTool {
+        width: 95%;
+        justify-content: center;
+      }
+      button {
+        width: 95%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 5px 10px;
+        margin: 0.2rem;
+        font-size: 1rem;
+      }
+    }
+  }
+  //逐句翻譯功能
+  div#translateForeach {
+    p {
+      font-size: 1rem;
+    }
+    div.container {
+      flex-direction: column;
+      div.sentence {
+        width: 100%;
+        text-align: justify;
+      }
+      div.audio {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+
+  /*英文摘要功能頁面*/
+  div.summarize_container_en {
+    div {
+      div.original_text_container {
+        label {
+          font-size: 1rem;
+        }
+        p.original_text {
+          font-size: 1rem;
+        }
+      }
+      div.tools {
+        flex-direction: column;
+        flex-wrap: wrap;
+        div.leftTool {
+          width: 95%;
+          justify-content: center;
+        }
+        div.rightTool {
+          width: 95%;
+          justify-content: center;
+        }
+        button {
+          width: 95%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          padding: 5px 10px;
+          margin: 0.2rem;
+          font-size: 1rem;
+        }
+      }
+      div.summary_container {
+        label {
+          font-size: 1rem;
+        }
+        p.summary {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  /*中文摘要功能頁面*/
+  div.summarize_container_ch {
+    div {
+      div.original_text_container {
+        label {
+          font-size: 1rem;
+        }
+        p.original_text {
+          font-size: 1rem;
+        }
+      }
+      div.tools {
+        flex-direction: column;
+        flex-wrap: wrap;
+        div.leftTool {
+          width: 95%;
+          justify-content: center;
+        }
+        div.rightTool {
+          width: 95%;
+          justify-content: center;
+        }
+        button {
+          width: 95%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          padding: 5px 10px;
+          margin: 0.2rem;
+          font-size: 1rem;
+        }
+      }
+      div.summary_container {
+        label {
+          font-size: 1rem;
+        }
+        p.summary {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  /*翻譯並摘要功能頁面*/
+  //中翻英並自動摘要
+  div.TranslateSummarize_output_ch2en_container {
+    div {
+      div.translate_container {
+        label {
+          font-size: 1rem;
+        }
+        p.translate {
+          font-size: 1rem;
+        }
+      }
+      div.tools {
+        div.leftTool {
+          width: 46%;
+        }
+        div.rightTool {
+          width: 46%;
+        }
+        button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          padding: 5px 10px;
+          margin: 0.2rem;
+          font-size: 1rem;
+        }
+      }
+      div.summarize_container {
+        label {
+          font-size: 1rem;
+        }
+        p.summarize {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  //英翻中並自動摘要
+  div.TranslateSummarize_output_en2ch_container {
+    div {
+      div.translate_container {
+        label {
+          font-size: 1rem;
+        }
+        p.translate {
+          font-size: 1rem;
+          margin: 1rem 0.2rem 1rem 0.2rem;
+        }
+      }
+      div.summarize_container {
+        label {
+          font-size: 1rem;
+        }
+        p.summarize {
+          font-size: 1rem;
+          margin: 1rem 0.2rem 1rem 0.2rem;
+        }
+      }
+    }
+    div.tools {
+      div.leftTool {
+        width: 46%;
+      }
+      div.rightTool {
+        width: 46%;
+      }
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 5px 10px;
+        margin: 0.2rem;
+        font-size: 1rem;
+      }
+    }
+  }
+  /*幫助頁面*/
+  div#helpContainer {
+    div.helpItem {
+      div.item {
+        width: 90%;
+        margin: 2px;
+        img {
+          width: 35vw;
+          height: 35vw;
+        }
+        div {
+          font-size: 1.2rem;
+          height: 1.2rem;
+        }
+        p {
+          font-size: 1rem;
+          height: 2rem;
+        }
+      }
+    }
+  }
+  //Word Cloud
+  div.wordcloud {
+    img {
+      display: block;
+      margin: auto;
+      width: 400px;
+      height: 200px;
+    }
+  }
+}

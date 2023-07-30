@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>雙語備課輔助工具</title>
+    <!--Title Icon-->
+    <link
+      rel="Shortcut Icon"
+      type="image/x-icon"
+      href="https://github.com/ChingHung21/Icons/blob/main/titleIcon.ico?raw=true"
+    />
+    <!--Google Font Setting-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+TC&display=swap"
+      rel="stylesheet"
+    />
+    <!--Link to Google Icon-->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <!--Link to css-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static', filename='/style.css')}}"
+    />
+  </head>
+  <body>
+    <!--header-->
+    <header>
+      <div class="logo">
+        <img
+        src="https://github.com/ChingHung21/Icons/blob/main/logo.png?raw=true"/
+        alt="logo" />
+        <h1>
+          雙語備課輔助工具
+          <div>Bilingual Lesson Assistant</div>
+        </h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/">首頁</a></li>
+          <li><a href="/vocabulary">單字</a></li>
+          <li><a class="active" href="/help">說明</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="helpContainer">
+      <div class="helpItem">
+        <div class="item">
+          <img
+            src="https://github.com/ChingHung21/Icons/blob/main/translateHelp.png?raw=true"
+            alt="translateHelp.png"
+          />
+          <div>機器翻譯</div>
+          <p>
+            將文章進行中英翻譯。您也可以使用「逐句翻譯」功能，將文章拆解成句子個別翻譯。
+          </p>
+        </div>
+        <div class="item">
+          <img
+            src="https://github.com/ChingHung21/Icons/blob/main/summarizeHelp.png?raw=true"
+            alt="summarizeHelp.png"
+          />
+          <div>文章摘要</div>
+          <p>標註文章中的重點語句，並產生摘要。</p>
+        </div>
+        <div class="item">
+          <img
+            src="https://github.com/ChingHung21/Icons/blob/main/translatesummarizeHelp.png?raw=true"
+            alt="translatesummarizeHelp.png"
+          />
+          <div>中英翻譯並自動摘要</div>
+          <p>將文章先進行中英翻譯，再標註文章中的重點語句，並產生摘要。</p>
+        </div>
+      </div>
+      <div class="helpItem">
+        <div class="item">
+          <img
+            src="https://github.com/ChingHung21/Icons/blob/main/ttsHelp.png?raw=true"
+            alt="ttsHelp.png"
+          />
+          <div>語音導讀</div>
+          <p>將文章轉換成流暢的語音。</p>
+        </div>
+        <div class="item">
+          <img
+            src="https://github.com/ChingHung21/Icons/blob/main/vocabularyhunterHelp.png?raw=true"
+            alt="vocabularyhunterHelp.png"
+          />
+          <div>國小基礎單字偵測</div>
+          <p>
+            偵測文章內是否包含國小基礎單字。將滑鼠移入單字可以顯示其單字資訊。
+          </p>
+        </div>
+        <div class="item">
+          <img
+            src="https://github.com/ChingHung21/Icons/blob/main/dictionaryHelp.png?raw=true"
+            alt="dictionaryHelp.png"
+          />
+          <div>字典查詢</div>
+          <p>可輸入單字，並使用奇摩、劍橋、牛津、韋氏等字典進行查詢。</p>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+
+    <footer>
+      <p style="font-weight: bolder">
+        Demo Website for Bilingual Lesson Assistant by Ching-Hung Chiu
+      </p>
+      <p>National Yang Ming Chiao Tung University</p>
+      <p>College of Science (Degree Program of E-Learning)</p>
+    </footer>
+  </body>
+</html>
+
+<!--
+Attribute(註明來源):
+1. 網站的三角形Logo:
+<a href="https://www.flaticon.com/free-icons/triangle" title="triangle icons">Triangle icons created by Freepik - Flaticon</a>
+2. Copy Icon: 
+<a href="https://www.flaticon.com/free-icons/paper" title="paper icons">Paper icons created by Gregor Cresnar - Flaticon</a>
+3. 語音導讀 Icon:
+<a href="https://www.flaticon.com/free-icons/unmute" title="unmute icons">Unmute icons created by redempticon - Flaticon</a>
+4. en_to_ch Icon:
+<a href="https://www.flaticon.com/free-icons/translator" title="translator icons">Translator icons created by Freepik - Flaticon</a>
+5. ch_to_en Icon:
+<a href="https://www.flaticon.com/free-icons/translator" title="translator icons">Translator icons created by Freepik - Flaticon</a>
+6. number_list Icon:
+<a href="https://www.flaticon.com/free-icons/list" title="list icons">List icons created by Freepik - Flaticon</a>
+-->

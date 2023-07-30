@@ -1,0 +1,5737 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>雙語備課輔助工具</title>
+    <!--Title Icon-->
+    <link
+      rel="Shortcut Icon"
+      type="image/x-icon"
+      href="https://github.com/ChingHung21/Icons/blob/main/titleIcon.ico?raw=true"
+    />
+    <!--Google Font Setting-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+TC&display=swap"
+      rel="stylesheet"
+    />
+    <!--Link to Google Icon-->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <!--Link to css-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static', filename='/style.css')}}"
+    />
+  </head>
+  <body>
+    <!--header-->
+    <header>
+      <div class="logo">
+        <img
+        src="https://github.com/ChingHung21/Icons/blob/main/logo.png?raw=true"/
+        alt="logo" />
+        <h1>
+          雙語備課輔助工具
+          <div>Bilingual Lesson Assistant</div>
+        </h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/">首頁</a></li>
+          <li><a class="active" href="/vocabulary">單字</a></li>
+          <li><a href="/help">說明</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="vocabularyRefer">
+      <div>
+        本應用程式可偵測文章內是否包含國小基礎單字，其基礎單字的建立參考<a
+          href="https://www.geptkids.org.tw/Home/wordlist"
+          >GEPT小學英檢</a
+        >以及<a href="https://www.coolenglish.edu.tw/">Cool English平臺</a
+        >所提供的國小300單字表。
+      </div>
+    </div>
+
+    <table id="vocabularyContainer">
+      <tr>
+        <th>單字</th>
+        <th />
+        <td>發音</td>
+        <td />
+        <td>例句</td>
+        <td />
+      </tr>
+      <tr>
+        <th>about 關於(冠詞)</th>
+        <th />
+        <td>[əˋbaʊt]</td>
+        <td />
+        <td>What's the book about? 這本書是關於什麼的？</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>actor 男演員(名詞)</th>
+        <th />
+        <td>[ˋæktɚ]</td>
+        <td />
+        <td>He is my favorite acotr. 他是我最喜歡的男演員。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>actress 女演員(名詞)</th>
+        <th />
+        <td>[ˋæktrɪs]</td>
+        <td />
+        <td>The actress can dance very well, too. 那位女演員也很會跳舞。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>after 之後(介系詞)</th>
+        <th />
+        <td>[ˋæftɚ]</td>
+        <td />
+        <td>He watches TV after school. 他放學之後會看電視。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>afternoon 下午(動詞)</th>
+        <th />
+        <td>[ˋæftɚˋnun]</td>
+        <td />
+        <td>
+          My grandma usually sleeps in the afternoon. 我的祖母通常在下午睡覺。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>able 有能力的(形容詞)</th>
+        <th />
+        <td>[ˋeb!]</td>
+        <td />
+        <td>
+          I am able to go jogging with you on Sunday.
+          星期天我可以和你一起去慢跑。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>above 在...上方(介係詞)</th>
+        <th />
+        <td>[əˋbʌv]</td>
+        <td />
+        <td>There's a mirror above the table. 桌子上方有面鏡子。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>abroad 在國外(副詞)</th>
+        <th />
+        <td>[əˋbrɔd]</td>
+        <td />
+        <td>My daughter is studying abroad. 我的女兒正在國外讀書。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>across 在...對面(介係詞)</th>
+        <th />
+        <td>[əˋkrɔs]</td>
+        <td />
+        <td>He walks across the street. 他走路穿過街道。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>afraid 害怕的(形容詞)</th>
+        <th />
+        <td>[əˋfred]</td>
+        <td />
+        <td>
+          Mary is afraid of lions because of their terrible teeth.
+          瑪麗害怕獅子，因為牠們的牙齒很可怕。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>again 再一次(副詞)</th>
+        <th />
+        <td>[əˋgɛn]</td>
+        <td />
+        <td>Would you say that again? 請你再說一遍好嗎？</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>age 年齡(名詞)</th>
+        <th />
+        <td>[edʒ]</td>
+        <td />
+        <td>What age is your elder sister? 你的姊姊幾歲?</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>airplane 飛機(名詞)</th>
+        <th />
+        <td>[ˋɛr͵plen]</td>
+        <td />
+        <td>
+          The rich man has his own private airplane.
+          這個富有的男人擁有自己的私人飛機 。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>airport 機場(名詞)</th>
+        <th />
+        <td>[ˋɛr͵port]</td>
+        <td />
+        <td>
+          Taoyuan International Airport is an international airport serving
+          Taipei and northern Taiwan.
+          桃園國際機場是服務於台北和台灣北部的國際機場。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>all 所有的(形容詞)</th>
+        <th />
+        <td>[ɔl]</td>
+        <td />
+        <td>
+          All animals have to eat in order to live.
+          所有動物都必須吃東西才能生存。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>always 總是(副詞)</th>
+        <th />
+        <td>[ˋɔlwez]</td>
+        <td />
+        <td>She always talks about something boring. 她總是講些無聊的事情。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>angry 生氣的(angry)</th>
+        <th />
+        <td>[ˋæŋgrɪ]</td>
+        <td />
+        <td>She's really angry at me 她很生我的氣。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>animal 動物(名詞)</th>
+        <th />
+        <td>[ˋænəm!]</td>
+        <td />
+        <td>You can go to the zoo to see animals. 你可以去動物園裡看動物。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>answer 回答(動詞)；答案(名詞)</th>
+        <th />
+        <td>[ˋænsɚ]</td>
+        <td />
+        <td>He didn't answer my question. 他沒有回答我的問題。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>apple 蘋果(名詞)</th>
+        <th />
+        <td>[ˋæp!]</td>
+        <td />
+        <td>An apple a day keeps the doctor away. 一天一蘋果，醫生遠離我。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>April 四月(名詞)</th>
+        <th />
+        <td>[ˋeprəl]</td>
+        <td />
+        <td>We play jokes on April Fool's Day. 我們在四月的愚人節開玩笑。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>arm 手臂(名詞)</th>
+        <th />
+        <td>[ɑrm]</td>
+        <td />
+        <td>
+          The baby fell asleep in her mother's arms. 嬰兒在母親的手臂裡睡著了。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>art 藝術(名詞)</th>
+        <th />
+        <td>[ɑrt]</td>
+        <td />
+        <td>I have art class on Monday. 我禮拜一有藝術課。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>ask 問(動詞)</th>
+        <th />
+        <td>[æsk]</td>
+        <td />
+        <td>She asked him his name. 她問他叫什麼。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>at 在(介係詞)</th>
+        <th />
+        <td>[æt]</td>
+        <td />
+        <td>I was at home yesterday. 我昨天待在家裡。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>August 八月(名詞)</th>
+        <th />
+        <td>[ɔˋgʌst]</td>
+        <td />
+        <td>My birthday is in August. 我的生日在八月。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>away 離開(副詞)</th>
+        <th />
+        <td>[əˋwe]</td>
+        <td />
+        <td>
+          Mr. Lee is away on holiday until the end of the week.
+          林先生去度假了，要到週末才能 回來。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>aunt 阿姨、姑姑、伯母、舅媽(名詞)</th>
+        <th />
+        <td>[ænt]</td>
+        <td />
+        <td>I have an aunt in the USA. 我在美國有一個阿姨。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>baby 嬰兒(名詞)</th>
+        <th />
+        <td>[ˋbebɪ]</td>
+        <td />
+        <td>She has a eight-month-old baby. 她有一個八個月的嬰兒。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>back 背(名詞)；後面的(形容詞)；向後(副詞)</th>
+        <th />
+        <td>[bæk]</td>
+        <td />
+        <td>
+          My daughter sat in the back of the car. 我的女兒坐在汽車
+          後排的座位上。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>bad 不好的、壞的(形容詞)</th>
+        <th />
+        <td>[bæd]</td>
+        <td />
+        <td>
+          We've just had some very bad news. 我們剛剛收到了一些非常壞的消息。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>bag 袋子(名詞)</th>
+        <th />
+        <td>[bæg]</td>
+        <td />
+        <td>He carries a shopping bag to supermarket. 他提著購物袋去超市。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>ball 球(名詞)</th>
+        <th />
+        <td>[bɔl]</td>
+        <td />
+        <td>
+          The students were kicking a ball on the grass. 學生們在草地上踢球。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>banana 香蕉(名詞)</th>
+        <th />
+        <td>[bəˋnænə]</td>
+        <td />
+        <td>The banana is her favorite fruit. 香蕉是她最喜歡的水果。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>bank 銀行(名詞)；堤(名詞)</th>
+        <th />
+        <td>[bæŋk]</td>
+        <td />
+        <td>I put all my money in this bank. 我把所有的錢都存在這家銀行裡。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>baseball 棒球(名詞)</th>
+        <th />
+        <td>[ˋbes͵bɔl]</td>
+        <td />
+        <td>They play baseball in their free time. 他們有空的時候會打棒球。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>basketball 籃球(名詞)</th>
+        <th />
+        <td>[ˋbæskɪt͵bɔl]</td>
+        <td />
+        <td>They play basketball after school. 他們放學後會打籃球。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>bathroom 浴室(名詞)</th>
+        <th />
+        <td>[ˋbæθ͵rum]</td>
+        <td />
+        <td>Amy takes shower in the bathroom. 艾米在浴室裡淋浴。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>beach 海灘(名詞)</th>
+        <th />
+        <td>[bitʃ]</td>
+        <td />
+        <td>They spent the day on the beach. 他們在海灘度過了一整天。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>bear 熊(名詞)；支撐、承受(動詞)</th>
+        <th />
+        <td>[bɛr]</td>
+        <td />
+        <td>A brown bear is walking in the forest. 一隻棕熊在森林裡散步。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>beautiful 美麗的、漂亮的(形容詞)</th>
+        <th />
+        <td>[ˋbjutəfəl]</td>
+        <td />
+        <td>Lisa has a beautiful face. 麗莎有一張漂亮的臉蛋。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>because 因為(連接詞)</th>
+        <th />
+        <td>[bɪˋkɔz]</td>
+        <td />
+        <td>He is at home because he is ill. 他因病在家休養。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>bed 床(名詞)</th>
+        <th />
+        <td>[bɛd]</td>
+        <td />
+        <td>Mike goes to bed at 10:30. Mike在 10:30 上床睡覺。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>bedroom 臥房(名詞)</th>
+        <th />
+        <td>[ˋbɛd͵rʊm]</td>
+        <td />
+        <td>
+          Gary like listening to music in his bedroom.
+          Gary喜歡在他的臥室裡聽音樂。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>bee 蜜蜂(名詞)</th>
+        <th />
+        <td>[bi]</td>
+        <td />
+        <td>A swarm of bees flew into the garden. 一群蜜蜂飛進花園。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>beef 牛肉(名詞)</th>
+        <th />
+        <td>[bif]</td>
+        <td />
+        <td>They often have roast beef for dinner. 他們晚餐經常吃烤牛肉。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>before 在...之前(介系詞, 連接詞)</th>
+        <th />
+        <td>[bɪˋfor]</td>
+        <td />
+        <td>
+          Students must do warm-ups before PE class. 學生必須在體育課前做 熱身。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>behind 在...後面(介系詞)</th>
+        <th />
+        <td>[bɪˋhaɪnd]</td>
+        <td />
+        <td>
+          There is a beautiful garden behind the house. 屋後有個美麗的花園。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>bike 腳踏車(名詞)</th>
+        <th />
+        <td>[baɪk]</td>
+        <td />
+        <td>I go to school by bike. 我騎腳踏車去上學。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>big 大的(形容詞)</th>
+        <th />
+        <td>[bɪg]</td>
+        <td />
+        <td>His lunchbox is bigger than yours. 他的便當盒比你的大。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>bird 鳥(名詞)</th>
+        <th />
+        <td>[bɝd]</td>
+        <td />
+        <td>Birds can fly. 鳥會飛。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>birthday 生日(名詞)</th>
+        <th />
+        <td>[ˋbɝθ͵de]</td>
+        <td />
+        <td>
+          Let’s celebrate your birthday this Sunday!
+          這個星期日讓我們來慶祝你的生日吧 ！
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>bite 咬(動詞)</th>
+        <th />
+        <td>[baɪt]</td>
+        <td />
+        <td>That big dog bites the postman. 那隻大狗咬了郵差。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>black 黑色的(形容詞)</th>
+        <th />
+        <td>[blæk]</td>
+        <td />
+        <td>John wears a black shirt. 約翰穿著一件黑色襯衫。。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>blackboard 黑板(名詞)</th>
+        <th />
+        <td>[ˋblæk͵bord]</td>
+        <td />
+        <td>
+          Mr.Chen writes some notes on the blackboard.
+          陳老師在黑板上寫了一些筆記 。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>blue 藍色的(形容詞)</th>
+        <th />
+        <td>[blu]</td>
+        <td />
+        <td>The birds are flying in the blue sky. 鳥兒在藍天中飛翔。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>boat 船(名詞)</th>
+        <th />
+        <td>[bot]</td>
+        <td />
+        <td>
+          He went to that island for vacation by boat. 他搭船去那個島上度假。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>book 書(名詞)</th>
+        <th />
+        <td>[bʊk]</td>
+        <td />
+        <td>
+          My mother likes reading books in the library. 我媽媽喜歡在圖書館讀書。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>bookstore 書店(名詞))</th>
+        <th />
+        <td>[ˋbʊk͵stor]</td>
+        <td />
+        <td>
+          Miss Lin likes to buy books from bookstore. 林小姐喜歡從書店買書。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>bored 覺得無聊的(形容詞)</th>
+        <th />
+        <td>[bord]</td>
+        <td />
+        <td>
+          I always feel very bored when I am at home by myself.
+          我一個人在家的時候總是覺得很無聊。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>both 兩個都(限定詞)</th>
+        <th />
+        <td>[boθ]</td>
+        <td />
+        <td>
+          Both of us are interested in playing football.
+          我們兩個都對踢足球感興趣。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>bottle 瓶子(名詞)</th>
+        <th />
+        <td>[ˋbɑt!]</td>
+        <td />
+        <td>Plastic bottles are lighter than glass ones. 塑膠瓶比玻璃瓶輕。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>box 箱子(名詞)</th>
+        <th />
+        <td>[bɑks]</td>
+        <td />
+        <td>Mother brought home a box of candies. 母親帶一盒糖果回家。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>boy 男孩(名詞)</th>
+        <th />
+        <td>[bɔɪ]</td>
+        <td />
+        <td>He is a naughty boy. 他是個調皮的男孩。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>breakfast 早餐(名詞)</th>
+        <th />
+        <td>[ˋbrɛkfəst]</td>
+        <td />
+        <td>Jay has some salad for his breakfast. Jay早餐吃了一些沙拉。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>brother 哥哥、弟弟(名詞)</th>
+        <th />
+        <td>[ˋbrʌðɚ]</td>
+        <td />
+        <td>I have three elder brothers. 我有三個哥哥。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>brown 咖啡色的(形容詞)</th>
+        <th />
+        <td>[braʊn]</td>
+        <td />
+        <td>Her eyes are brown. 她的眼睛是棕色的。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>brush 刷(動詞)；刷子(名詞)</th>
+        <th />
+        <td>[brʌʃ]</td>
+        <td />
+        <td>
+          Remember to brush your teeth before going to bed. 睡前記得刷牙。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>bus 公車(名詞)</th>
+        <th />
+        <td>[bʌs]</td>
+        <td />
+        <td>My little brother goes to school by bus. 我弟弟搭公車去上學。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>busy 忙碌的(形容詞)</th>
+        <th />
+        <td>[ˋbɪzɪ]</td>
+        <td />
+        <td>He is too busy to drink some water. 他忙到沒空喝水。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>but 但是(連接詞)</th>
+        <th />
+        <td>[bʌt]</td>
+        <td />
+        <td>
+          Hank is very short, but he runs very fast. Hank很矮，但是他跑得很快。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>butterfly 蝴蝶(名詞)</th>
+        <th />
+        <td>[ˋbʌtɚ͵flaɪ]</td>
+        <td />
+        <td>
+          There are so many butterflies in the garden. 花園裡有這麼多蝴蝶。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>buy 買(動詞)</th>
+        <th />
+        <td>[baɪ]</td>
+        <td />
+        <td>My father bought me a toy. 我的爸爸買了一個玩具給我。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>cake 蛋糕(名詞)</th>
+        <th />
+        <td>[kek]</td>
+        <td />
+        <td>
+          My wife baked a chocolate cake for my birthday.
+          我妻子做了一個巧克力蛋糕慶賀我的生日 。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>call 打電話給...(動詞)</th>
+        <th />
+        <td>[kɔl]</td>
+        <td />
+        <td>Call me at the office this afternoon. 午後打電話到我辦公室來。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>can 可以、能、會(助動詞)；罐頭、一罐(名詞)</th>
+        <th />
+        <td>[kæn]</td>
+        <td />
+        <td>I can drive. 我會開車。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>candy 糖果(名詞)</th>
+        <th />
+        <td>[ˋkændɪ]</td>
+        <td />
+        <td>
+          You eat too much candy. It's bad for your teeth.
+          你糖吃得太多了。這對你的牙齒不好。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>cap 棒球帽(名詞)</th>
+        <th />
+        <td>[kæp]</td>
+        <td />
+        <td>
+          Eric always wears a cap when he goes to sports field.
+          Eric去運動場時總是戴著帽子。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>car 車(名詞)</th>
+        <th />
+        <td>[kɑr]</td>
+        <td />
+        <td>He goes to hospital by car. 他開車去醫院。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>card 卡片(名詞)；紙牌(名詞)</th>
+        <th />
+        <td>[kɑrd]</td>
+        <td />
+        <td>
+          Adam sent a Christmas card to me last year. Adam去年寄了一張聖誕卡給我
+          。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>cat 貓(名詞)</th>
+        <th />
+        <td>[kæt]</td>
+        <td />
+        <td>I have four cats. 我有四隻貓。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>cellphone 手機(名詞)</th>
+        <th />
+        <td>[s'ɛlfon]</td>
+        <td />
+        <td>
+          Don’t use the cellphone when you are walking. 走路時不要使用手機。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>chair 椅子(名詞)</th>
+        <th />
+        <td>[tʃɛr]</td>
+        <td />
+        <td>
+          He rose from his chair and walked to the window.
+          他從椅子上站起來，走到窗邊。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>chicken 雞(名詞)；雞肉(名詞)</th>
+        <th />
+        <td>[ˋtʃɪkɪn]</td>
+        <td />
+        <td>We're having fried chicken for dinner. 我們晚餐吃炸雞。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>Chinese 中文(名詞)；中國人(名詞)；中國的、中式的(形容詞)</th>
+        <th />
+        <td>[ˋtʃaɪˋniz]</td>
+        <td />
+        <td>She has Chinese class on Monday. 她禮 拜一有中文課。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>chocolate 巧克力(名詞)</th>
+        <th />
+        <td>[ˋtʃɑkəlɪt]</td>
+        <td />
+        <td>
+          She bought a box of chocolates at the corner store. 她在街頭小店購得一
+          盒巧克力。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>chopsticks 筷子(名詞)</th>
+        <th />
+        <td>[ˋtʃɑp͵stɪks]</td>
+        <td />
+        <td>
+          Mrs. Mallory doesn't know how to use chopsticks. 馬洛里夫人不會用筷子
+          。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>class 課；班級(名詞)</th>
+        <th />
+        <td>[klæs]</td>
+        <td />
+        <td>My son is in class 302. 我兒子在302班。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>classroom 教室(名詞)</th>
+        <th />
+        <td>[ˋklæs͵rʊm]</td>
+        <td />
+        <td>
+          There are twenty students in the classroom. 教室裡有二十個學生。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>clean 乾淨的(形容詞)；打掃、清理(動詞)</th>
+        <th />
+        <td>[klin]</td>
+        <td />
+        <td>My room is very clean. 我的房間非常乾淨。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>climb 爬、攀爬(動詞)</th>
+        <th />
+        <td>[klaɪm]</td>
+        <td />
+        <td>They climbed out through the window. 他們從窗戶爬了出來。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>clock 時鐘(名詞)</th>
+        <th />
+        <td>[klɑk]</td>
+        <td />
+        <td>The clock is ten minutes slow. 這時鐘慢五分鐘。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>close 關(動詞)；靠近的、接近的(形容詞、副詞)</th>
+        <th />
+        <td>[klos]</td>
+        <td />
+        <td>She closed the door softly. 她輕輕地關上門。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>clothes 衣服 (名詞)</th>
+        <th />
+        <td>[kloz]</td>
+        <td />
+        <td>He usually wears casual clothes. 他通常穿得很隨意。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>cloudy 多雲的(形容詞)</th>
+        <th />
+        <td>[ˋklaʊdɪ]</td>
+        <td />
+        <td>
+          It's a cloudy day, so you should bring an umbrella.
+          今天是陰天，你應該帶把傘。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>coat 外套(名詞)</th>
+        <th />
+        <td>[kot]</td>
+        <td />
+        <td>Put on your coat! It's getting cold. 穿上你的外套！天氣變冷了。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>coffee 咖啡(名詞)</th>
+        <th />
+        <td>[ˋkɔfɪ]</td>
+        <td />
+        <td>I like to have some coffee in the morning. 我喜歡早上喝點咖啡。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>cold 寒冷的(形容詞)；感冒(名詞)</th>
+        <th />
+        <td>[kold]</td>
+        <td />
+        <td>Put on your coat! It's getting cold. 穿上你的外套！天氣變冷了。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>color 顏色(名詞)</th>
+        <th />
+        <td>[ˋkʌlɚ]</td>
+        <td />
+        <td>My favorite color is orange. 我最喜歡的顏色是橘色。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>come 來(動詞)</th>
+        <th />
+        <td>[kʌm]</td>
+        <td />
+        <td>Come to my party tomorrow. 明天來參加我的派對。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>computer 電腦(名詞)</th>
+        <th />
+        <td>[kəmˋpjutɚ]</td>
+        <td />
+        <td>
+          In this class, we learn how a computer works.
+          在本課中，我們學習電腦如何運作。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>cook 做飯(動詞)；廚師(名詞)</th>
+        <th />
+        <td>[kʊk]</td>
+        <td />
+        <td>My father is cooking in the kitchen. 我爸爸正在廚房裡做飯。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>cookies 餅乾(名詞)</th>
+        <th />
+        <td>[ˈkʊki]</td>
+        <td />
+        <td>These cookies taste good. 這些餅乾嘗起來真美味。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>cool 涼爽的、清涼的(形容詞)</th>
+        <th />
+        <td>[kul]</td>
+        <td />
+        <td>
+          The weather in fall becomes much cooler. 秋天的天氣變得涼爽多了。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>cousin 堂兄（弟、姊、妹）(名詞)</th>
+        <th />
+        <td>[ˋkʌzn]</td>
+        <td />
+        <td>Jay is my cousin. Jay是我的堂弟。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>cow 乳牛(名詞)</th>
+        <th />
+        <td>[kaʊ]</td>
+        <td />
+        <td>Milking a cow is not easy. 幫乳牛擠牛奶並不容易。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>cry 哭、哭泣(動詞)</th>
+        <th />
+        <td>[kraɪ]</td>
+        <td />
+        <td>The little baby is crying. 小寶寶在哭。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>cup 杯子(名詞)</th>
+        <th />
+        <td>[kʌp]</td>
+        <td />
+        <td>I'd like to have a cup of tea. 我想喝杯茶。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>cute 可愛(形容詞)</th>
+        <th />
+        <td>[kjut]</td>
+        <td />
+        <td>His little sister is really cute. 他的妹妹非常可愛。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>dad 爸爸(名詞)</th>
+        <th />
+        <td>[dæd]</td>
+        <td />
+        <td>My dad went to Spain last month. 我爸爸上個月去了西班牙。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>dance 跳舞(動詞)</th>
+        <th />
+        <td>[dæns]</td>
+        <td />
+        <td>
+          We played our music and danced the night away.
+          我們放上音樂，跳了一晚上的舞。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>daughter 女兒(名詞)</th>
+        <th />
+        <td>[ˋdɔtɚ]</td>
+        <td />
+        <td>Alex has a daughter and a son. Alex有一個女兒和一個兒子。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>day 天(名詞)</th>
+        <th />
+        <td>[de]</td>
+        <td />
+        <td>There are 24 hours in a day. 一天有24小時。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>December 十二月(名詞)</th>
+        <th />
+        <td>[dɪˋsɛmbɚ]</td>
+        <td />
+        <td>
+          It's December. Christmas is around the corner.
+          現在是十二月。聖誕節快到了 。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>desk 桌子(名詞)</th>
+        <th />
+        <td>[dɛsk]</td>
+        <td />
+        <td>She is studying hard at the desk. 她正在書桌前用功讀書。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>different 不一樣的(形容詞)</th>
+        <th />
+        <td>[ˋdɪfərənt]</td>
+        <td />
+        <td>
+          There are many different types kinds of bacteria. 細菌有很多不同的
+          種類。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>dinner 晚餐(名詞)</th>
+        <th />
+        <td>[ˋdɪnɚ]</td>
+        <td />
+        <td>Virginia is busy preparing dinner. Virginia正忙著做晚飯。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>dirty 髒的(形容詞)</th>
+        <th />
+        <td>[ˋdɝtɪ]</td>
+        <td />
+        <td>Don't sit on the floor. 別坐在地板上。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>dish 碟子、盤子(名詞)</th>
+        <th />
+        <td>[dɪʃ]</td>
+        <td />
+        <td>Could you wash the dishes? 你能洗碗嗎？</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>doctor 醫生(名詞)</th>
+        <th />
+        <td>ˋdɑktɚ]</td>
+        <td />
+        <td>I'm sick. I would like to see a doctor. 我病了。我想去看醫生。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>dog 狗(名詞)</th>
+        <th />
+        <td>[dɔg]</td>
+        <td />
+        <td>He keeps three dogs. 他養了三隻狗。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>doll 玩偶(名詞)</th>
+        <th />
+        <td>[dɑl]</td>
+        <td />
+        <td>The little girl is playing with a doll. 小女孩正在玩洋娃娃。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>dollar 元(名詞)</th>
+        <th />
+        <td>[ˋdɑlɚ]</td>
+        <td />
+        <td>
+          It takes my 20 dollars to buy this backpack. 買這個背包花了我 20
+          美元。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>door 門(名詞)</th>
+        <th />
+        <td>[dor]</td>
+        <td />
+        <td>The door to his bedroom was locked. 他臥室的門上了鎖。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>dodgeball 躲避球(名詞)</th>
+        <th />
+        <td>[`dɑdʒ ͵bɔl]</td>
+        <td />
+        <td>We like to play dodgeball. 我們喜歡玩躲避球。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>draw 畫、描寫(動詞)</th>
+        <th />
+        <td>[drɔ]</td>
+        <td />
+        <td>
+          The children drew pictures of their families. 孩子們畫了自己的家人。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>dream 夢(名詞)；作夢(動詞)</th>
+        <th />
+        <td>[drim]</td>
+        <td />
+        <td>She dreamed that she could fly. 她夢見她會飛。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>dress 洋裝(名詞)；穿衣、打扮(動詞)</th>
+        <th />
+        <td>[drɛs]</td>
+        <td />
+        <td>
+          All the pretty women wore their smartest dresses. 所有漂亮的女士
+          都穿著最漂亮的連衫裙。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>drink 喝(動詞)；飲料(名詞)</th>
+        <th />
+        <td>[drɪŋk]</td>
+        <td />
+        <td>I'm thirsty. I need some water. 我口渴了。我需要一些水。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>drive 開車(動詞)</th>
+        <th />
+        <td>[draɪv]</td>
+        <td />
+        <td>It is dangerous to drive after drinking. 酒後開車危險。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>driver 司機、駕駛員(名詞)</th>
+        <th />
+        <td>[ˋdraɪvɚ]</td>
+        <td />
+        <td>Mr. Tsai is a bus driver. 蔡先生是一位公車司機。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>drum 鼓(名詞)；打鼓(動詞)</th>
+        <th />
+        <td>[drʌm]</td>
+        <td />
+        <td>hey danced to the beat of the drums. 他們隨著鼓聲翩翩起舞。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>dumpling 水餃(名詞)</th>
+        <th />
+        <td>[ˋdʌmpɪŋ]</td>
+        <td />
+        <td>
+          He boiled some dumplings for his lunch. 他煮了一些餃子作為午餐。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>duck 鴨子、鴨肉(名詞)；閃避、迅速低頭(動詞)</th>
+        <th />
+        <td>[dʌk]</td>
+        <td />
+        <td>The wild ducks are swimming in the lake. 野鴨子在湖裡游泳。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>ear 耳朵(名詞)</th>
+        <th />
+        <td>[ɪr]</td>
+        <td />
+        <td>We hear with our ears. 我們用耳朵聽。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>early 早的、提早的(形容詞、副詞)</th>
+        <th />
+        <td>[ˋɝlɪ]</td>
+        <td />
+        <td>I'm going to have an early night. 我要早點睡。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>easy 簡單的(形容詞)</th>
+        <th />
+        <td>[ˋizɪ]</td>
+        <td />
+        <td>That quiz was easy. 那個測驗很簡單。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>eat 吃(動詞)</th>
+        <th />
+        <td>[it]</td>
+        <td />
+        <td>He ate his breakfast quickly. 他匆匆地吃了早餐。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>egg 蛋(名詞)</th>
+        <th />
+        <td>[ɛg]</td>
+        <td />
+        <td>Can we have some boiled eggs to eat? 可以給我們吃一些水煮蛋嗎？</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>eight 八(名詞、形容詞)</th>
+        <th />
+        <td>[et]</td>
+        <td />
+        <td>He bought eight books from the bookstore. 他從書店買了八本書。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>eighteen 十八(名詞、形容詞)</th>
+        <th />
+        <td>[ˋeˋtin]</td>
+        <td />
+        <td>She is eighteen now. 她現在十八歲了。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>eighty 八十(名詞、形容詞)</th>
+        <th />
+        <td>[ˋetɪ]</td>
+        <td />
+        <td>
+          They've invited eighty guests to the wedding.
+          他們邀請了80個客人參加他們的婚禮。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>elephant 大象(名詞)</th>
+        <th />
+        <td>[ˋɛləfənt]</td>
+        <td />
+        <td>Elephants have long trunk. 大像有長長的鼻子。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>eleven 十一(名詞、形容詞)</th>
+        <th />
+        <td>[ɪˋlɛvn]</td>
+        <td />
+        <td>My younger brother is eleven. 我弟弟十一歲。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>email 電子郵件(名詞)</th>
+        <th />
+        <td>[ˋimel]</td>
+        <td />
+        <td>He sent me an email last week. 他上週寄了一封電子郵件給我。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>English 英文(名詞)；英國的、英語的(形容詞)</th>
+        <th />
+        <td>[ˋɪŋglɪʃ]</td>
+        <td />
+        <td>Do you speak English? 你會說英語嗎？</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>enjoy 享受、喜歡(動詞)</th>
+        <th />
+        <td>[ɪnˋdʒɔɪ]</td>
+        <td />
+        <td>I enjoyed reading these books very much. 我很喜歡讀這些書。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>eraser 橡皮擦(名詞)</th>
+        <th />
+        <td>[ɪˋresɚ]</td>
+        <td />
+        <td>
+          I need an eraser and a pen to correct my answers.
+          我需要一塊橡皮和一支筆來改 正我的答案。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>evening 傍晚(名詞)</th>
+        <th />
+        <td>[ˋivnɪŋ]</td>
+        <td />
+        <td>I'll do my homework in the evening. 我將在晚上做作業。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>every 每一個的(形容詞)</th>
+        <th />
+        <td>[ˋɛvrɪ]</td>
+        <td />
+        <td>The library is open every day. 圖書館每天都開。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>excited 覺得興奮的(形容詞)</th>
+        <th />
+        <td>[ɪkˋsaɪtɪd]</td>
+        <td />
+        <td>Miller was excited to learn the news. Miller聽到這消息很興奮。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>exciting 令人興奮的(形容詞)</th>
+        <th />
+        <td>[ɪkˋsaɪtɪŋ]</td>
+        <td />
+        <td>
+          The basketball game yesterday was very exciting. 昨天那場籃球比賽
+          很精彩。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>eye 眼睛(名詞)</th>
+        <th />
+        <td>[aɪ]</td>
+        <td />
+        <td>Yuri has beautiful eyes. Yuri有一雙美麗的眼睛。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>face 臉(名詞)</th>
+        <th />
+        <td>[fes]</td>
+        <td />
+        <td>She has a long, thin face. 她長著一張瘦長的臉。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>fall 秋天(名詞)；跌倒、掉落(動詞)</th>
+        <th />
+        <td>[fɔl]</td>
+        <td />
+        <td>
+          The leaves turn red and yellow when fall comes. 秋天來臨時，葉子變
+          紅變黃。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>family 家庭、家人(名詞)</th>
+        <th />
+        <td>[ˋfæməlɪ]</td>
+        <td />
+        <td>My family is large. 我的家是個大家庭。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>fan 電扇、扇子(名詞)；粉絲(名詞)</th>
+        <th />
+        <td>[fæn]</td>
+        <td />
+        <td>He's a great fan of country music. 他是個超級鄉村音樂迷。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>farmer 農夫(名詞)</th>
+        <th />
+        <td>[ˋfɑrmɚ]</td>
+        <td />
+        <td>He is a rice farmer. 他是位稻農。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>fast 快速的(形容詞、副詞)</th>
+        <th />
+        <td>[fæst]</td>
+        <td />
+        <td>He is a fast swimmer. 他游泳速度很快。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>father 爸爸(名詞)</th>
+        <th />
+        <td>[ˋfɑðɚ]</td>
+        <td />
+        <td>
+          My father took me to watch the football every Saturday.
+          我父親每週六帶我去看足球 賽。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>favorite 最喜歡的(形容詞)</th>
+        <th />
+        <td>[ˋfevərɪt]</td>
+        <td />
+        <td>Blue is my favorite color. 藍色是我最喜歡的顏色。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>February 二月(名詞)</th>
+        <th />
+        <td>[ˋfɛbrʊ͵ɛrɪ]</td>
+        <td />
+        <td>I was born on 5 February. 我生於2月5日。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>feel 感覺、感受(動詞)</th>
+        <th />
+        <td>[fil]</td>
+        <td />
+        <td>I feel sick today. 我今天感覺不舒服。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>foot 腳(單數)(名詞)</th>
+        <th />
+        <td>[fʊt]</td>
+        <td />
+        <td>I go to school on foot. 我走路去上學。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>feet 腳(複數)(名詞)</th>
+        <th />
+        <td>[fit]</td>
+        <td />
+        <td>My feet hurts after playing football. 踢完足球後，我的腳很痛。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>fifteen 十五(名詞、形容詞)</th>
+        <th />
+        <td>[ˋfɪfˋtin]</td>
+        <td />
+        <td>Miss Young has fifteen cars. 楊小姐有十五輛車。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>fifty 五十(名詞、形容詞)</th>
+        <th />
+        <td>[ˋfɪftɪ]</td>
+        <td />
+        <td>My mom is fifty years old. 我媽媽今年五十歲。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>find 找(動詞)</th>
+        <th />
+        <td>[faɪnd]</td>
+        <td />
+        <td>I couldn't find Mike's phone number. 我找不到Mike的電話號碼。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>fine 很好的、不錯的(形容詞)</th>
+        <th />
+        <td>[faɪn]</td>
+        <td />
+        <td>She is really a fine artist. 她真是一位傑出的藝術家。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>first 第一(名詞)；第一的(形容詞、副詞)</th>
+        <th />
+        <td>[fɝst]</td>
+        <td />
+        <td>
+          January is the first month of the year. 一月是一年中的第一個 月。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>fish 魚、魚肉(名詞)；捕魚(動詞)</th>
+        <th />
+        <td>[fɪʃ]</td>
+        <td />
+        <td>Let's go fishing. 我們釣魚去吧。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>five 五(名詞、形容詞)</th>
+        <th />
+        <td>[faɪv]</td>
+        <td />
+        <td>There are five people in my family. 我家一共五個人。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>floor 地板(名詞)；樓層(名詞)</th>
+        <th />
+        <td>[flor]</td>
+        <td />
+        <td>
+          The floor of this room is made of wood. 這個房間的地板是木頭的。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>flower 花(名詞)</th>
+        <th />
+        <td>[ˋflaʊɚ]</td>
+        <td />
+        <td>
+          The gardener planted four kinds of flowers in the garden.
+          園丁在花園裡種了四種花 。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>fly 飛(動詞)</th>
+        <th />
+        <td>[flaɪ]</td>
+        <td />
+        <td>Several birds flew across the sky. 幾隻鳥飛過天空。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>food 食物(名詞)</th>
+        <th />
+        <td>[fud]</td>
+        <td />
+        <td>
+          There was a lot of food and drink at the party.
+          派對上供應了大量的食物和飲品。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>football 足球(名詞)</th>
+        <th />
+        <td>[ˋfʊt͵bɔl]</td>
+        <td />
+        <td>Ray plays football after school. Ray放學後會踢足球。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>fork 叉子(名詞)</th>
+        <th />
+        <td>[fɔrk]</td>
+        <td />
+        <td>
+          Mr.Peters uses fork to eat because he can't use chopsticks.
+          彼得斯先生用叉子吃飯， 因為他不會用筷子。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>forty 四十(名詞、形容詞)</th>
+        <th />
+        <td>[ˋfɔrtɪ]</td>
+        <td />
+        <td>There are forty students in this class. 這個班有四十個學生。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>four 四(名詞、形容詞)</th>
+        <th />
+        <td>[for]</td>
+        <td />
+        <td>There are four seasons in the year. 一年有四個季節。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>fourteen 十四(名詞、形容詞)</th>
+        <th />
+        <td>[ˋforˋtin]</td>
+        <td />
+        <td>Stanley is fourteen years old. 史丹尼今年十四歲。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>free 免費的、自由的(形容詞、副詞)</th>
+        <th />
+        <td>[fri]</td>
+        <td />
+        <td>I got some free cinema tickets. 我搞到了一些免費電影票。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>Friday 星期五(名詞)</th>
+        <th />
+        <td>[ˋfraɪ͵de]</td>
+        <td />
+        <td>I leave work early on Fridays. 我星期五較早下班。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>fridge(refrigerator) 電冰箱(名詞)</th>
+        <th />
+        <td>[frɪdʒ]</td>
+        <td />
+        <td>
+          Don't forget to put the milk back in the fridge. 別忘了把牛奶放
+          回冰箱裡。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>friend 朋友(名詞)</th>
+        <th />
+        <td>[frɛnd]</td>
+        <td />
+        <td>Thomas is my best friend. 托瑪士是我最好的朋友。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>frog 青蛙(名詞)</th>
+        <th />
+        <td>[frɑg]</td>
+        <td />
+        <td>
+          Frogs make a low noise called a croak. 青蛙會發出「呱呱」的低沈叫聲。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>from 從(介係詞)</th>
+        <th />
+        <td>[frɑm]</td>
+        <td />
+        <td>I'm from Taiwan. 我來自臺灣。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>fruit 水果(名詞)</th>
+        <th />
+        <td>[frut]</td>
+        <td />
+        <td>I like fruit and vegetables. 我喜歡水果和蔬菜。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>full 飽的、充滿的(形容詞)</th>
+        <th />
+        <td>[fʊl]</td>
+        <td />
+        <td>The room was full of people. 室內擠滿了人。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>fun 有趣的(形容詞)；樂趣(名詞)</th>
+        <th />
+        <td>[fʌn]</td>
+        <td />
+        <td>Have fun! 玩個痛快！</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>game 遊戲、比賽(名詞)</th>
+        <th />
+        <td>[gem]</td>
+        <td />
+        <td>Tyler likes to play video games. 泰勒喜歡玩電子遊戲。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>garden 花園(名詞)</th>
+        <th />
+        <td>[ˋgɑrdn]</td>
+        <td />
+        <td>The children were playing in the garden. 孩子們在花園裡玩。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>get 得到、收到(動詞)</th>
+        <th />
+        <td>[gɛt]</td>
+        <td />
+        <td>I got a gift yesterday. 我昨天收到了一份禮物。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>gift 禮物(名詞)</th>
+        <th />
+        <td>[gɪft]</td>
+        <td />
+        <td>She has got lots of birthday gifts. 她得到了許多生日禮物。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>girl 女孩(名詞)</th>
+        <th />
+        <td>[gɝl]</td>
+        <td />
+        <td>
+          Two girls showed us round the classrooms. 兩個女孩領著我們參觀了課室。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>give 給(動詞)</th>
+        <th />
+        <td>[gɪv]</td>
+        <td />
+        <td>I gave him a cap. 我給了他一頂帽子。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>glass 玻璃、玻璃杯(名詞)</th>
+        <th />
+        <td>[glæs]</td>
+        <td />
+        <td>She poured some milk into a glass. 她往玻璃杯中倒了些牛奶。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>glasses 眼鏡(名詞)</th>
+        <th />
+        <td>[glæsɪs]</td>
+        <td />
+        <td>Mr. Lee wears a pair of glasses. 林先生有戴眼鏡。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>glue 膠水(名詞)；黏(動詞)</th>
+        <th />
+        <td>[glu]</td>
+        <td />
+        <td>
+          I use glue to put these pieces of paper together.
+          我用膠水把這些紙片黏在一 起。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>go 去、走(動詞)</th>
+        <th />
+        <td>[go]</td>
+        <td />
+        <td>William goes to work by MRT. 威廉搭捷運上班。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>good 好的(形容詞)</th>
+        <th />
+        <td>[gʊd]</td>
+        <td />
+        <td>Exercise is good for health. 運動有益於健康。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>grandfather 外公、爺爺(名詞)</th>
+        <th />
+        <td>[ˋgrænd͵fɑðɚ]</td>
+        <td />
+        <td>
+          Her grandfather on her mother's side was Italian. 她外公是義大 利人。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>grandpa 外公、爺爺(名詞)</th>
+        <th />
+        <td>[ˋgrændpɑ]</td>
+        <td />
+        <td>
+          Her grandpa on her mother's side was Italian. 她外公是義大利人。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>grandmother 外婆、奶奶(名詞)</th>
+        <th />
+        <td>[ˋgrænd͵mʌðɚ]</td>
+        <td />
+        <td>
+          Both my grandmothers were from Scotland. 我的奶奶和外婆都來自蘇 格蘭。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>grandma 外婆、奶奶(名詞)</th>
+        <th />
+        <td>[ˋgrændmɑ]</td>
+        <td />
+        <td>
+          Both my grandmas were from Scotland. 我的奶奶和外婆都來自蘇格蘭。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>grape 葡萄(名詞)</th>
+        <th />
+        <td>[grep]</td>
+        <td />
+        <td>Wine is made from grapes. 葡萄酒是葡萄釀成的。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>gray 灰色(名詞、形容詞)</th>
+        <th />
+        <td>[gre]</td>
+        <td />
+        <td>His hair is gray. 他頭髮灰白。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>great 很棒的(形容詞)</th>
+        <th />
+        <td>[gret]</td>
+        <td />
+        <td>Einstein was a great scientist. 愛因斯坦是個優秀的科學家。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>green 綠色(名詞、形容詞)</th>
+        <th />
+        <td>[grin]</td>
+        <td />
+        <td>
+          There is a green tree in front of our house. 我們的屋前有棵綠樹。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>grow 成長、長大、成長(動詞)</th>
+        <th />
+        <td>[gro]</td>
+        <td />
+        <td>Children grow so quickly. 小朋友長得很快。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>hair 頭髮(名詞)</th>
+        <th />
+        <td>[hɛr]</td>
+        <td />
+        <td>Her hair is gray. 她頭髮灰白。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>hamburger 漢堡(名詞)</th>
+        <th />
+        <td>[ˋhæmbɝgɚ]</td>
+        <td />
+        <td>I have two hamburgers for lunch. 我午餐吃兩個漢堡。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>hand 手(名詞)</th>
+        <th />
+        <td>[hænd]</td>
+        <td />
+        <td>Wash your hands before eating. 吃東西前要洗手。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>happy 開心的、高興的(形容詞)</th>
+        <th />
+        <td>[ˋhæpɪ]</td>
+        <td />
+        <td>She looks so happy. 她看起來非常快樂。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>hard 困難的、堅硬的(形容詞)；努力的、艱苦的(副詞)</th>
+        <th />
+        <td>[hɑrd]</td>
+        <td />
+        <td>She is a hard worker. 她是一個工作十分勤奮的人。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>hat 帽子(名詞)</th>
+        <th />
+        <td>[hæt]</td>
+        <td />
+        <td>She was wearing a brown hat. 她戴著一頂棕色帽子。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>head 頭(名詞)；朝...前進(動詞)</th>
+        <th />
+        <td>[hɛd]</td>
+        <td />
+        <td>
+          Put this hat on to keep your head warm. 戴上這頂帽子，給頭部保暖。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>headache 頭痛(名詞)</th>
+        <th />
+        <td>[ˋhɛd͵ek]</td>
+        <td />
+        <td>
+          She took an pill to relieve her headache. 她吃了一顆藥片來緩解頭痛。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>heavy 重的(形容詞)</th>
+        <th />
+        <td>[ˋhɛvɪ]</td>
+        <td />
+        <td>The box is too heavy for me. 我覺得這盒子太重了。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>help 幫助(動詞)</th>
+        <th />
+        <td>[hɛlp]</td>
+        <td />
+        <td>How can I help you? 我如何才能幫你呢？</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>here 這裡(名詞、副詞)</th>
+        <th />
+        <td>[hɪr]</td>
+        <td />
+        <td>I live here. 我住在這裡。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>high 高的(形容詞、副詞)；強烈的(副詞)</th>
+        <th />
+        <td>[haɪ]</td>
+        <td />
+        <td>Victor lives in a high building. 維克多住在一幢高樓裡。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>hike 健行(動詞)</th>
+        <th />
+        <td>[haɪk]</td>
+        <td />
+        <td>My father go hiking every Sunday. 我父親每個星期天都去健行。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>hippo 河馬(名詞)</th>
+        <th />
+        <td>[ˋhɪpo]</td>
+        <td />
+        <td>You can see hippos in the zoo. 你可以在動物園看到河馬。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>hit 打、碰撞(動詞)</th>
+        <th />
+        <td>[hɪt]</td>
+        <td />
+        <td>A bullet hit him on the leg. 一顆子彈擊中了他的腿。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>home 家、家庭(名詞)；在家、回家(副詞)；家庭的、國內的(形容詞)</th>
+        <th />
+        <td>[hom]</td>
+        <td />
+        <td>I were at home yesterday. 我昨天在家裡 。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>homework 回家作業(名詞)</th>
+        <th />
+        <td>[ˋhom͵wɝk]</td>
+        <td />
+        <td>Vincent does his homework at 7:20. 文森在7:20做他的作業。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>hope 希望(動詞、名詞)</th>
+        <th />
+        <td>[hop]</td>
+        <td />
+        <td>
+          I'm hoping for an interview next week. 我盼望著下星期有一次面試。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>horse 馬(名詞)</th>
+        <th />
+        <td>[hɔrs]</td>
+        <td />
+        <td>The horse runs very fast. 這匹馬跑得很快。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>hospital 醫院(名詞)</th>
+        <th />
+        <td>[ˋhɑspɪt!]</td>
+        <td />
+        <td>
+          She spent a week in the hospital last year. 去年她在醫院住了一個星期。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>hot 熱的、燙的(形容詞)</th>
+        <th />
+        <td>[hɑt]</td>
+        <td />
+        <td>
+          The weather is getting hotter due to global warming.
+          由於全球變暖，天氣越來 越熱。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>house 房子(名詞)</th>
+        <th />
+        <td>[haʊs]</td>
+        <td />
+        <td>She lives in a little house. 她住在一間小房子裡。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>hundred 一百(名詞、形容詞)</th>
+        <th />
+        <td>[ˋhʌndrəd]</td>
+        <td />
+        <td>The hamburger is one hundred dollars. 這個漢堡要一百塊。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>hungry 餓的(形容詞)</th>
+        <th />
+        <td>[ˋhʌŋgrɪ]</td>
+        <td />
+        <td>
+          The children are always hungry when they get home from school.
+          孩子們放學回 家時總是饑腸轆轆。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>hurry 趕緊、匆忙(動詞、名詞)</th>
+        <th />
+        <td>[ˋhɝɪ]</td>
+        <td />
+        <td>She was in a hurry to see her child. 她急切地想見到她的孩子。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>hurt 受傷、疼痛(動詞)</th>
+        <th />
+        <td>[hɝt]</td>
+        <td />
+        <td>My right hand hurts. 我右手會痛。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>in 在...裡面、在...內(介係詞)</th>
+        <th />
+        <td>[ɪn]</td>
+        <td />
+        <td>The ball is in the box. 球在箱子裡面。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>front 前面(名詞)；前面的、向前的(形容詞、副詞)；朝前(動詞)</th>
+        <th />
+        <td>[frʌnt]</td>
+        <td />
+        <td>
+          The bus stops right in front of our house. 公共汽車正停在我們房前。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>inside 在...裡面、向...裡面(介係詞)</th>
+        <th />
+        <td>[ˋɪnˋsaɪd]</td>
+        <td />
+        <td>There is a label on the inside of the box. 盒子內側有個標籤 。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>interesting 有趣的(形容詞)</th>
+        <th />
+        <td>[ˋɪntərɪstɪŋ]</td>
+        <td />
+        <td>
+          It is an interesting book for children. 那是一本有趣的兒童讀物。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>jacket 夾克、外套(名詞)</th>
+        <th />
+        <td>[ˋdʒækɪt]</td>
+        <td />
+        <td>The keys are in my jacket pocket. 鎖匙在我的夾克口袋裡。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>January 一月(名詞)</th>
+        <th />
+        <td>[ˋdʒænjʊ͵ɛrɪ]</td>
+        <td />
+        <td>We're going camping next January. 我們明年一月去露營。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>job 工作、職業(名詞)</th>
+        <th />
+        <td>[dʒɑb]</td>
+        <td />
+        <td>
+          When she left college, she got a job as an editor in a publishing
+          company. 大學畢業後她在一家出版社當編輯。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>juice 果汁(名詞)</th>
+        <th />
+        <td>[dʒus]</td>
+        <td />
+        <td>I like a glass of apple juice. 我要一杯蘋果汁。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>July 七月(名詞)</th>
+        <th />
+        <td>[dʒuˋlaɪ]</td>
+        <td />
+        <td>Summer vacation starts in July. 暑假從七月開始</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>jump 跳(動詞)</th>
+        <th />
+        <td>[dʒʌmp]</td>
+        <td />
+        <td>
+          Our cat is always jumping into the box. 我們的貓總是跳進箱子裡。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>June 六月(名詞)</th>
+        <th />
+        <td>[dʒun]</td>
+        <td />
+        <td>
+          In 2023, Dragon Boat Festival falls on June 22.
+          2023年的端午節在6月22號。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>key 鑰匙、答案、關鍵(名詞)；重要的、關鍵的(形容詞)</th>
+        <th />
+        <td>[ki]</td>
+        <td />
+        <td>I have a spare key. 我有一把備用鑰匙。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>kid 小孩(名詞)</th>
+        <th />
+        <td>[kɪd]</td>
+        <td />
+        <td>She is a ten-year-old kid. 她是一個十歲的孩子。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>kitchen 廚房(名詞)</th>
+        <th />
+        <td>[ˋkɪtʃɪn]</td>
+        <td />
+        <td>We usually eat breakfast in the kitchen. 我們通常在廚房吃早餐。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>kite 風箏(名詞)</th>
+        <th />
+        <td>[kaɪt]</td>
+        <td />
+        <td>I likes to fly a kite. 我喜歡放風箏。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>knife 刀子(名詞)</th>
+        <th />
+        <td>[naɪf]</td>
+        <td />
+        <td>He drew a knife and stabbed her. 他拔出刀，刺中了她。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>know 知道、認識(動詞)</th>
+        <th />
+        <td>[no]</td>
+        <td />
+        <td>
+          She knows the name of every kid in the school.
+          她知道學校裡每個孩子的名字。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>koala 無尾熊(名詞)</th>
+        <th />
+        <td>[koˋɑlə]</td>
+        <td />
+        <td>
+          The koala is an iconic Australian animal. 無尾熊是澳洲標誌性的動物。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>lake 湖(名詞)</th>
+        <th />
+        <td>[lek]</td>
+        <td />
+        <td>
+          He goes jogging around the lake in his free time.
+          他在有空時會繞著湖慢跑。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>lamp 燈(名詞)</th>
+        <th />
+        <td>[læmp]</td>
+        <td />
+        <td>
+          The street lamps make the street bright and secure.
+          路燈讓街道明亮又安全。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>last 最後的(形容詞、副詞)；持續、持久、度過(動詞)</th>
+        <th />
+        <td>[læst]</td>
+        <td />
+        <td>He was the last person to leave. 他是最後離去的人 。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>late 遲到的、晚的(形容詞、副詞)</th>
+        <th />
+        <td>[let]</td>
+        <td />
+        <td>He was late for school. 他上學遲到了。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>laugh 笑(動詞)；笑聲(名詞)</th>
+        <th />
+        <td>[læf]</td>
+        <td />
+        <td>They laughed at her jokes. 聽了她講的笑話他們都笑了。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>lazy 懶惰的(形容詞)</th>
+        <th />
+        <td>[ˋlezɪ]</td>
+        <td />
+        <td>He's too lazy to walk to work. 他很懶，不願走路上班。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>left 左邊(名詞)；左邊的(左邊的)；向左(副詞)</th>
+        <th />
+        <td>[lɛft]</td>
+        <td />
+        <td>Some people write with their left hand. 有些人用左手寫 字。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>leg 腿(名詞)</th>
+        <th />
+        <td>[lɛg]</td>
+        <td />
+        <td>
+          My legs were tired after so much walking.
+          走了這麽遠的路，我的腿有些累了。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>lemon 檸檬(名詞)</th>
+        <th />
+        <td>[ˋlɛmən]</td>
+        <td />
+        <td>
+          Would you like a slice of lemon in your tea? 你的茶裡要放一片檸檬嗎？
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>library 圖書館(名詞)</th>
+        <th />
+        <td>[ˋlaɪ͵brɛrɪ]</td>
+        <td />
+        <td>I borrowed some books from the library. 我從圖書館借了一些書。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>
+          light
+          輕的(形容詞)；光、光線(名詞)；點火、照亮(動詞)；明亮的、淺色的(形容詞)
+        </th>
+        <th />
+        <td>[laɪt]</td>
+        <td />
+        <td>The suitcase is very light. 這個箱子很輕。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>like 喜歡(動詞)；相像的、類似的(形容詞)；像、如(介係詞)</th>
+        <th />
+        <td>[laɪk]</td>
+        <td />
+        <td>She likes playing the piano. 她喜歡彈鋼琴。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>lion 獅子(名詞)</th>
+        <th />
+        <td>[ˋlaɪən]</td>
+        <td />
+        <td>Lions are the king of the animals. 獅子是百獸之王。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>listen 聽(動詞)</th>
+        <th />
+        <td>[ˋlɪsn]</td>
+        <td />
+        <td>
+          Lily listens to music in her free time. Lily在她有空的時候聽音樂。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>live 住、生活(動詞)</th>
+        <th />
+        <td>[lɪv]</td>
+        <td />
+        <td>Where do you live? 你住在哪裡？</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>long 長的(形容詞)</th>
+        <th />
+        <td>[lɔŋ]</td>
+        <td />
+        <td>It's a long story. 說來話長。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>look 看、看起來(動詞)</th>
+        <th />
+        <td>[lʊk]</td>
+        <td />
+        <td>What are you looking at? 你在看什麼？</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>love 愛、喜愛(動詞、名詞)</th>
+        <th />
+        <td>[lʌv]</td>
+        <td />
+        <td>John and Mary are in love. 約翰和瑪莉在相愛。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>lunch 午餐(名詞)</th>
+        <th />
+        <td>[lʌntʃ]</td>
+        <td />
+        <td>I have lunch at 12:30. 我在12:30吃午餐。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>mad 生氣的、氣憤的(形容詞)</th>
+        <th />
+        <td>[mæd]</td>
+        <td />
+        <td>Don't be mad at me. 不要對我大發脾氣。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>mail 信(名詞)；郵寄(動詞)</th>
+        <th />
+        <td>[mel]</td>
+        <td />
+        <td>
+          She spent the morning reading and answering her mail.
+          她花了一個上午處理信件。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>mailman 郵差(名詞)</th>
+        <th />
+        <td>[ˋmel͵mæn]</td>
+        <td />
+        <td>
+          The mailman delivers letters and parcels every morning.
+          郵差每天早晨遞送信件和包裹。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>make 做、製造、做出、趕上、使...變為(動詞)</th>
+        <th />
+        <td>[mek]</td>
+        <td />
+        <td>Mary made a paper boat. 瑪麗做了一隻紙船。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>man 男人(名詞)</th>
+        <th />
+        <td>[mæn]</td>
+        <td />
+        <td>He is a nice young man. 他是一個很好的青年。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>many 許多的(形容詞)</th>
+        <th />
+        <td>[ˋmɛnɪ]</td>
+        <td />
+        <td>How many brothers do you have? 你有幾個兄弟？</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>March 三月(名詞)</th>
+        <th />
+        <td>[mɑrtʃ]</td>
+        <td />
+        <td>The next meeting will be in March. 下次會議在三月舉行。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>marker 麥克筆(名詞)</th>
+        <th />
+        <td>[mɑrkɚ]</td>
+        <td />
+        <td>I need a marker. 我需要一支麥克筆。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>market 市場(名詞)；銷售(動詞)</th>
+        <th />
+        <td>[ˋmɑrkɪt]</td>
+        <td />
+        <td>
+          She went to the market to buy fresh vegetables. 她去市場買新鮮蔬菜 。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>math 數學(名詞)</th>
+        <th />
+        <td>[mæθ]</td>
+        <td />
+        <td>I have math class on Wednesday. 我禮拜三有數學課。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>May 五月(名詞)</th>
+        <th />
+        <td>[me]</td>
+        <td />
+        <td>
+          Mother's day is on the second Sunday of May.
+          母親節是五月的第二個星期天。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>maybe 也許(副詞)</th>
+        <th />
+        <td>[ˋmebɪ]</td>
+        <td />
+        <td>
+          Maybe you'll have better luck next time. 也許下次你的運氣會好一點。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>meal 一餐(名詞)</th>
+        <th />
+        <td>[mil]</td>
+        <td />
+        <td>I have my main meal at midday. 我一天的正餐是在中午。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>meet 遇見、會面(動詞)</th>
+        <th />
+        <td>[mit]</td>
+        <td />
+        <td>Let's meet at the mall tomorrow! 我們明天在商場見面吧!</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>men 男人(複數)(名詞)</th>
+        <th />
+        <td>[mɛn]</td>
+        <td />
+        <td>Three men stood by the door. 門口站著三個男人。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>mice 老鼠(複數)(名詞)</th>
+        <th />
+        <td>[maɪs]</td>
+        <td />
+        <td>
+          The mice are running around in the old house. 老鼠在老房子裡跑來跑去。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>milk 牛奶(名詞)</th>
+        <th />
+        <td>[mɪlk]</td>
+        <td />
+        <td>
+          Don't forget to put the milk back in the fridge.
+          別忘了把牛奶放回冰箱。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>
+          miss 想念(動詞)；未擊中；未得到；未達到；未領會(動詞)；遺漏(動詞)
+        </th>
+        <th />
+        <td>[mɪs]</td>
+        <td />
+        <td>I know how you miss your mother. 我了解你多麼地想念你的母親。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>Miss 小姐(名詞)</th>
+        <th />
+        <td>[mɪs]</td>
+        <td />
+        <td>Miss Brown is a popular teacher. 布朗小姐是位廣受歡迎的教師。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>mom 媽媽(名詞)</th>
+        <th />
+        <td>[mɑm]</td>
+        <td />
+        <td>
+          Mom was always full of stories about her family and childhood.
+          媽媽總是有許多關於家 庭和童年的故事。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>Monday 星期一(名詞)</th>
+        <th />
+        <td>[ˋmʌnde]</td>
+        <td />
+        <td>I start my new job on Monday. 週一我將開始我的新工作。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>money 錢(名詞)</th>
+        <th />
+        <td>[ˋmʌnɪ]</td>
+        <td />
+        <td>How much money do you earn? 你賺多少錢？</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>monkey 猴子(名詞)</th>
+        <th />
+        <td>[ˋmʌŋkɪ]</td>
+        <td />
+        <td>
+          Using a bunch of bananas, the zoo-keeper persuaded the monkey back
+          into its cage. 動物園管理員用一串香蕉說服了猴子回到籠子裡。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>month 月、月份(名詞)</th>
+        <th />
+        <td>[mʌnθ]</td>
+        <td />
+        <td>February is the shortest month. 二月是最短的月份。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>moon 月亮(名詞)</th>
+        <th />
+        <td>[mun]</td>
+        <td />
+        <td>What time does the moon rise? 月亮何時升起?</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>mop 用拖把拖地(動詞)；擦去(動詞)</th>
+        <th />
+        <td>[mɑp]</td>
+        <td />
+        <td>He mopped the bathroom floor. 他拖了浴室地板。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>more 更多的(形容詞、副詞)；更多(代名詞)</th>
+        <th />
+        <td>[mor]</td>
+        <td />
+        <td>
+          If you still feel hungry, there is more food in the kitchen.
+          如果你還餓，廚房裡還有東西。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>morning 早上(名詞)</th>
+        <th />
+        <td>[ˋmɔrnɪŋ]</td>
+        <td />
+        <td>
+          Mother goes shopping on Tuesday and Friday mornings.
+          我母親總是在星期二和星期五上午上街購物。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>mother 媽媽(名詞)</th>
+        <th />
+        <td>[ˋmʌðɚ]</td>
+        <td />
+        <td>My mother was 21 when she got married. 我母親結婚時21歲。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>motorcycle 摩托車(名詞)</th>
+        <th />
+        <td>[ˋmotɚ͵saɪk!]</td>
+        <td />
+        <td>Gary rides motorcycle to school. 蓋瑞期摩托車去上學。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>mountain 山(名詞)</th>
+        <th />
+        <td>[ˋmaʊntn]</td>
+        <td />
+        <td>
+          The Matterhorn is one of the biggest mountains in Europe.
+          馬特洪峰是歐洲最雄偉的山峰之一。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>mouse 老鼠(名詞)</th>
+        <th />
+        <td>[maʊs]</td>
+        <td />
+        <td>A mouse running across the street. 一隻老鼠跑過馬路。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>mouth 嘴巴(名詞)</th>
+        <th />
+        <td>[maʊθ]</td>
+        <td />
+        <td>
+          You shouldn't put so much food in your mouth at once.
+          你不該一次把這麼多食物塞入口中。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>movie 電影(名詞)</th>
+        <th />
+        <td>[ˋmuvɪ]</td>
+        <td />
+        <td>This movie is worth seeing. 這部影片值得一看。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>theater 劇院(名詞)；movie theater電影院(名詞)</th>
+        <th />
+        <td>[ˋθɪətɚ]</td>
+        <td />
+        <td>They were at the movie theater yesterday. 他們昨天 在電影院。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>Mr. 先生(名詞)</th>
+        <th />
+        <td>[ˋmɪstɚ]</td>
+        <td />
+        <td>Mr. Lee is my teacher. 李先生是我的老師。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>Mrs. 太太(名詞)</th>
+        <th />
+        <td>[ˋmɪsɪz]</td>
+        <td />
+        <td>Mrs. Smith lives in Paris. 史密斯太太住在巴黎。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>MRT 捷運(名詞)</th>
+        <th />
+        <td></td>
+        <td />
+        <td>I go to hospital by MRT. 我搭捷運去醫院。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>much 許多(形容詞、副詞)</th>
+        <th />
+        <td>[mʌtʃ]</td>
+        <td />
+        <td>How much rent do you pay? 你付多少租金？</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>museum 博物館(名詞)</th>
+        <th />
+        <td>[mjuˋzɪəm]</td>
+        <td />
+        <td>
+          The museum is full of rare and precious treasures.
+          博物館裡擺滿了稀世珍寶。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>music 音樂(名詞)</th>
+        <th />
+        <td>[ˋmjuzɪk]</td>
+        <td />
+        <td>What kind of music do you listen to? 你聽甚麼樣的音樂？</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>name 名字(名詞)</th>
+        <th />
+        <td>[nem]</td>
+        <td />
+        <td>What's your name? 你叫什麼名字？</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>near 靠近、接近(介係詞)；近的(形容詞)；接近、幾乎(副詞)</th>
+        <th />
+        <td>[nɪr]</td>
+        <td />
+        <td>The post office is quite near. 郵局很近。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>need 需要(動詞、名詞)</th>
+        <th />
+        <td>[nid]</td>
+        <td />
+        <td>The doctor said I needed an operation. 醫生說我需要動手術。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>never 不曾(副詞)</th>
+        <th />
+        <td>[ˋnɛvɚ]</td>
+        <td />
+        <td>He will never go there again. 他再也不會去那裡了。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>new 新的(形容詞)</th>
+        <th />
+        <td>[nju]</td>
+        <td />
+        <td>
+          She's very creative and always coming up with new ideas.
+          她極富創造力，總會想出新主意。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>nice 令人愉快的、宜人的(形容詞)</th>
+        <th />
+        <td>[naɪs]</td>
+        <td />
+        <td>It's a nice day. 天氣真好。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>night 晚上(名詞)</th>
+        <th />
+        <td>[naɪt]</td>
+        <td />
+        <td>They stayed three nights at the hotel. 他們在旅館裡住了三夜。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>nine 九(名詞、形容詞)</th>
+        <th />
+        <td>[naɪn]</td>
+        <td />
+        <td>The children go to bed at nine o'clock. 小孩們九點鐘上床睡覺。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>nineteen 十九(名詞、形容詞)</th>
+        <th />
+        <td>[ˋnaɪnˋtin]</td>
+        <td />
+        <td>
+          It's nineteen miles to the nearest town. 離最近的市鎮有19英里遠。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>ninety 九十(名詞、形容詞)</th>
+        <th />
+        <td>[ˋnaɪntɪ]</td>
+        <td />
+        <td>
+          They invited ninety guests to the wedding. 他們邀請了九十位賓客參加婚
+          禮。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>noodles 麵(名詞)</th>
+        <th />
+        <td>[ˋnud!z]</td>
+        <td />
+        <td>This restarant offers beef noodles. 這家餐廳提供牛肉麵。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>nose 鼻子(名詞)</th>
+        <th />
+        <td>[noz]</td>
+        <td />
+        <td>I had a sore throat and a runny nose. 我喉嚨痛，還流鼻涕。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>November (名詞)</th>
+        <th />
+        <td>[noˋvɛmbɚ]</td>
+        <td />
+        <td>He's starting his new job in November. 他將於11月開始新工作。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>now 現在(副詞、名詞、連接詞)</th>
+        <th />
+        <td>[naʊ]</td>
+        <td />
+        <td>
+          I used to live in Tainan but now I live in Taipei.
+          我過去住在臺南，但現 在住在臺北。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>number 數字(名詞)</th>
+        <th />
+        <td>[ˋnʌmbɚ]</td>
+        <td />
+        <td>My phone number is 237-841. 我的電話號碼是237-841</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>nurse 護士(名詞)</th>
+        <th />
+        <td>[nɝs]</td>
+        <td />
+        <td>A nurse came into the room. 一位護士走進了房間。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>October 十月(名詞)</th>
+        <th />
+        <td>[ɑkˋtobɚ]</td>
+        <td />
+        <td>Double Tenth Day is in October. 雙十節在十月。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>office 辦公室(名詞)</th>
+        <th />
+        <td>[ˋɔfɪs]</td>
+        <td />
+        <td>His office is on the third floor. 他的辦公室在三樓。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>old 老的、舊的(形容詞)</th>
+        <th />
+        <td>[old]</td>
+        <td />
+        <td>Oxford is an old university. 牛津大學是一所老大學。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>on 在...上面；在(某一天)(介係詞)</th>
+        <th />
+        <td>[ɑn]</td>
+        <td />
+        <td>Ow, you're standing on my foot! 哎喲，你踩著我的腳了！</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>one 一(名詞、形容詞)</th>
+        <th />
+        <td>[wʌn]</td>
+        <td />
+        <td>He had two slices and I only had one. 他有兩片，而我只有一片。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>only 僅有的、唯一的(形容詞、副詞)</th>
+        <th />
+        <td>[ˋonlɪ]</td>
+        <td />
+        <td>I was the only person on the train. 我是火車上唯一的乘客。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>open 開(動詞)</th>
+        <th />
+        <td>[ˋopən]</td>
+        <td />
+        <td>My door is always open to visitors. 我的門永遠為來訪者而開。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>orange 橘子(名詞)；橘色的(形容詞)</th>
+        <th />
+        <td>[ˋɔrɪndʒ]</td>
+        <td />
+        <td>How about some orange juice? 要喝點柳橙汁嗎？</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>other 其他的(形容詞、代名詞)</th>
+        <th />
+        <td>[ˋʌðɚ]</td>
+        <td />
+        <td>
+          Are there any other people we should ask? 另外還有我們應該問的人嗎？
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>out 外面的(形容詞)；向外(副詞)</th>
+        <th />
+        <td>[aʊt]</td>
+        <td />
+        <td>Let's go out for a walk. 我們出去散散步吧。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>outside 外面(名詞)；外面的(形容詞)；向外(副詞)；在...外(介係詞)</th>
+        <th />
+        <td>[ˋaʊtˋsaɪd]</td>
+        <td />
+        <td>The outside of the house is painted white. 房子外部漆成白色。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>paint 用顏料畫、刷油漆(動詞)；油漆、顏料(名詞)</th>
+        <th />
+        <td>[pent]</td>
+        <td />
+        <td>We've painted the bedroom blue. 我們把臥室漆成了藍色 。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>pair 一雙、一對(名詞)</th>
+        <th />
+        <td>[pɛr]</td>
+        <td />
+        <td>Robert needed a new pair of shoes. Robert需要一雙新鞋。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>panda 大貓熊(名詞)</th>
+        <th />
+        <td>[ˋpændə]</td>
+        <td />
+        <td>Pandas eat bamboo. 熊貓吃竹子。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>pants 長褲(名詞)</th>
+        <th />
+        <td>[pænts]</td>
+        <td />
+        <td>
+          I bought two new pairs of pants yesterday. 我昨天買了兩件新長褲。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>paper 紙張、報紙、試卷、文件(名詞)</th>
+        <th />
+        <td>[ˋpepɚ]</td>
+        <td />
+        <td>
+          Dictionaries are usually printed on thin paper. 字典通常用薄紙 印刷。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>parent 父母親(名詞)</th>
+        <th />
+        <td>[ˋpɛrənt]</td>
+        <td />
+        <td>
+          I'm going to meet Richard's parents for the first time this weekend.
+          我這個 週末將第一次見理查的父母。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>park 公園(名詞)</th>
+        <th />
+        <td>[pɑrk]</td>
+        <td />
+        <td>This city has many beautiful parks. 這城市有許多美麗的公園。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>party 派對(名詞)</th>
+        <th />
+        <td>[ˋpɑrtɪ]</td>
+        <td />
+        <td>Come to my birthday party! 來參加我的生日派對吧！</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>PE 體育、體育課(名詞)</th>
+        <th />
+        <td></td>
+        <td />
+        <td>I have PE class on Thursday. 我星期四有體育課。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>peach 桃子(名詞)</th>
+        <th />
+        <td>[pitʃ]</td>
+        <td />
+        <td>
+          Would you like peaches and cream for dessert?
+          你想來點蜜桃霜淇淋當甜點嗎？
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>pen 筆、鋼筆(名詞)</th>
+        <th />
+        <td>[pɛn]</td>
+        <td />
+        <td>I need a pen to write down notes. 我需要一支筆來寫筆記。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>pencil 鉛筆(名詞)</th>
+        <th />
+        <td>[ˋpɛns!]</td>
+        <td />
+        <td>
+          The last item on the list was added in pencil.
+          單子上的最後一項是用鉛筆加上去的 。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>people 人(複數)(名詞)</th>
+        <th />
+        <td>[ˋpip!]</td>
+        <td />
+        <td>Who are these people? 這些人是誰？</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>person 人(名詞)</th>
+        <th />
+        <td>[ˋpɝsn]</td>
+        <td />
+        <td>A strange person is asking to see you. 有個陌生人想見你。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>pet 寵物(名詞)</th>
+        <th />
+        <td>[pɛt]</td>
+        <td />
+        <td>
+          The little girl keeps a mini pig as a pet.
+          那個小女孩養了一隻迷你豬作為寵物。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>photo 照片(名詞)</th>
+        <th />
+        <td>[ˋfoto]</td>
+        <td />
+        <td>She took lots of photos of the kids. 她拍了很多孩子的照片。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>piano 鋼琴(名詞)</th>
+        <th />
+        <td>[pɪˋæno]</td>
+        <td />
+        <td>Jack played the piano yesterday. Jack昨天彈了鋼琴。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>picture 圖片(名詞)</th>
+        <th />
+        <td>[ˋpɪktʃɚ]</td>
+        <td />
+        <td>I had a picture taken this morning. 今天上午我拍了張照。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>pie 派、餡餅(名詞)</th>
+        <th />
+        <td>[paɪ]</td>
+        <td />
+        <td>Does anyone want some more pie? 有誰想再吃點派嗎？</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>pig 豬(名詞)</th>
+        <th />
+        <td>[pɪg]</td>
+        <td />
+        <td>He keeps pigs as a career. 他以養豬為業。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>pink 粉紅色(名詞)；粉紅色的(形容詞)</th>
+        <th />
+        <td>[pɪŋk]</td>
+        <td />
+        <td>She was dressed in pink. 她穿著粉紅色的衣服。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>pizza 披薩(名詞)</th>
+        <th />
+        <td>[ˋpitsə]</td>
+        <td />
+        <td>
+          I like lots of different pizza toppings. 我喜歡好多不同的披薩餡料。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>plane 飛機(名詞)；平的、平坦的、平面的(形容詞)</th>
+        <th />
+        <td>[plen]</td>
+        <td />
+        <td>I went to Japan by plane last week. 我上個禮拜搭飛機 去日本。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>play 玩耍、打球、彈奏、播放(動詞)</th>
+        <th />
+        <td>[ple]</td>
+        <td />
+        <td>Children like to play. 孩子們喜歡玩。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>pocket 口袋(名詞)</th>
+        <th />
+        <td>[ˋpɑkɪt]</td>
+        <td />
+        <td>
+          The policeman made the thief turn out his pockets.
+          警察叫小偷把口袋都翻出來。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>police 警察、警方(名詞)</th>
+        <th />
+        <td>[pəˋlis]</td>
+        <td />
+        <td>She's a police officer. 她是一位警察。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>pork 豬肉(名詞)</th>
+        <th />
+        <td>[pɔrk]</td>
+        <td />
+        <td>
+          I much prefer chicken to beef or pork. 比起牛肉或豬肉，我更喜歡雞肉。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>pretty 漂亮的(形容詞)</th>
+        <th />
+        <td>[ˋprɪtɪ]</td>
+        <td />
+        <td>She's so pretty. 她真漂亮。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>pumpkin 南瓜(名詞)</th>
+        <th />
+        <td>[ˋpʌmpkɪn]</td>
+        <td />
+        <td>
+          Pumpkin is a largea, round vegetable with hard, yellow or orange flesh
+          南瓜是一種大而圓的蔬菜，果肉堅硬，呈黃色或橙色
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>purple 紫色(名詞)；紫色的(形容詞)</th>
+        <th />
+        <td>[ˋpɝp!]</td>
+        <td />
+        <td>His face turned purple with rage. 他氣得臉色發紫。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>put 放(動詞)</th>
+        <th />
+        <td>[pʊt]</td>
+        <td />
+        <td>
+          He put his textbooks on the table by the window.
+          他把課本放在窗邊的桌上。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>question 問題(名詞)</th>
+        <th />
+        <td>[ˋkwɛstʃən]</td>
+        <td />
+        <td>Why won't you answer my question? 你為甚麼不回答我的問題？</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>quiet 安靜的(形容詞)</th>
+        <th />
+        <td>[ˋkwaɪət]</td>
+        <td />
+        <td>
+          The sea was quiet before the storm struck. 暴風雨來襲前海面很平靜。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>rabbit 兔子(名詞)</th>
+        <th />
+        <td>[ˋræbɪt]</td>
+        <td />
+        <td>A rabbit can make long jumps. 兔子可以跳得很遠。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>rain 雨水(名詞)；下雨(動詞)</th>
+        <th />
+        <td>[ren]</td>
+        <td />
+        <td>I think it's going to rain. 我想快要下雨了。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>rainbow 彩虹(名詞)</th>
+        <th />
+        <td>[ˋren͵bo]</td>
+        <td />
+        <td>
+          The sun came out and we saw a rainbow.
+          太陽出來了，我們看到了一道彩虹。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>rainy 下雨的(形容詞)</th>
+        <th />
+        <td>[ˋrenɪ]</td>
+        <td />
+        <td>
+          Most tropical areas have rainy and dry seasons.
+          大多數熱帶地區有雨季和旱季。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>read 閱讀(動詞)</th>
+        <th />
+        <td>[rid]</td>
+        <td />
+        <td>
+          I read a good article in today's paper.
+          我在今天的報紙上讀到了一篇好文章。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>ready 準備好的(形容詞)</th>
+        <th />
+        <td>[ˋrɛdɪ]</td>
+        <td />
+        <td>He is ready for the trip. 他已準備好去旅行。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>really 真正的、實際上、非常(副詞)</th>
+        <th />
+        <td>[ˋrɪəlɪ]</td>
+        <td />
+        <td>It's really cold today. 今天很冷。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>red 紅色(名詞)；紅色的(形容詞)</th>
+        <th />
+        <td>[rɛd]</td>
+        <td />
+        <td>
+          I prefer the green sweater to the red one. 我喜歡那件綠毛衣勝過紅的那
+          件。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>refrigerator(fridge) 電冰箱(名詞)</th>
+        <th />
+        <td>[rɪˋfrɪdʒə͵retɚ]</td>
+        <td />
+        <td>
+          Don't forget to put the milk back in the refrigerator.
+          別忘了把牛奶放回冰箱裡。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>restaurant 餐廳(名詞)</th>
+        <th />
+        <td>[ˋrɛstərənt]</td>
+        <td />
+        <td>
+          He invited her to dinner at a French restaurant.
+          他邀請她去一家法國餐館吃飯。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>restroom 洗手間、廁所(名詞)</th>
+        <th />
+        <td>[ˈrestruːm]</td>
+        <td />
+        <td>May I go to the restroom? 我可以去洗手間嗎?</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>rice 米飯(名詞)</th>
+        <th />
+        <td>[raɪs]</td>
+        <td />
+        <td>Most of the Asians live on rice. 大多數亞洲人以稻米為主食。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>ride 騎(機車、腳踏車等)(動詞)</th>
+        <th />
+        <td>[raɪd]</td>
+        <td />
+        <td>She rode home on her bicycle. 她騎腳踏車回家。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>right 正確的、右邊的(形容詞)；向右(副詞)；右邊(名詞)</th>
+        <th />
+        <td>[raɪt]</td>
+        <td />
+        <td>
+          You got three answers right and two wrong. 你答對了三道題，錯了兩道。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>river 河流(名詞)</th>
+        <th />
+        <td>[ˋrɪvɚ]</td>
+        <td />
+        <td>They're building new houses by the river. 他們正在河邊蓋新房。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>robot 機器人(名詞)</th>
+        <th />
+        <td>[ˋrobət]</td>
+        <td />
+        <td>
+          The surgery can be carried out by robots. 手術可以由機器人來做。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>ruler 尺(名詞)；統治者(名詞)</th>
+        <th />
+        <td>[ˋrulɚ]</td>
+        <td />
+        <td>
+          The child used a ruler to draw straight lines. 這孩子用一把直尺劃直線
+          。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>run 跑(動詞)</th>
+        <th />
+        <td>[rʌn]</td>
+        <td />
+        <td>He had to run to catch the bus. 他不得不跑過去趕搭公車。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>sad 傷心的、難過的(形容詞)</th>
+        <th />
+        <td>[sæd]</td>
+        <td />
+        <td>
+          I've just received some very sad news. 我剛剛得到一些令人傷心的消息。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>salad 沙拉(名詞)</th>
+        <th />
+        <td>[ˋsæləd]</td>
+        <td />
+        <td>I am not fond of salad. 我不喜歡吃沙拉。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>sale 拍賣、特價(名詞)</th>
+        <th />
+        <td>[sel]</td>
+        <td />
+        <td>The sale of alcohol is forbidden. 禁止出售酒類。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>sandwich 三明治(名詞)</th>
+        <th />
+        <td>[ˋsændwɪtʃ]</td>
+        <td />
+        <td>
+          He ate sandwiches in the office for lunch. 他在辦公室吃三明治當午餐。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>Saturday 名詞(星期六)</th>
+        <th />
+        <td>[ˋsætɚde]</td>
+        <td />
+        <td>He's leaving on Saturday. 他星期六出發。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>say 說(動詞)</th>
+        <th />
+        <td>[se]</td>
+        <td />
+        <td>How do you say this in English? 這在英語中怎麼說？</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>school 學校(名詞)</th>
+        <th />
+        <td>[skul]</td>
+        <td />
+        <td>
+          They're building a new school in the town. 他們正在鎮裡建一座新學校。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>science 科學(名詞)</th>
+        <th />
+        <td>[ˋsaɪəns]</td>
+        <td />
+        <td>
+          Space travel is one of the marvels of modern science.
+          太空漫遊是現代科學的一 大奇蹟。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>scooter 輕型機車(名詞)</th>
+        <th />
+        <td>[ˋskutɚ]</td>
+        <td />
+        <td>
+          In Taiwan, the number of scooters exceeds 10 million.
+          在台灣，速克達摩托車的數量在一千萬輛以上。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>sea 大海(名詞)</th>
+        <th />
+        <td>[si]</td>
+        <td />
+        <td>
+          We saw many boats sailing on the sea. 我們看到許多條船在大海上航行。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>season 季節(名詞)</th>
+        <th />
+        <td>[ˋsizn]</td>
+        <td />
+        <td>There are four seasons in a year. 一年有四季。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>second 第二(名詞、副詞)；第二的(形容詞)</th>
+        <th />
+        <td>[ˋsɛkənd]</td>
+        <td />
+        <td>She lives on the second floor. 她住在二樓。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>see 看見、理解、知道(動詞)</th>
+        <th />
+        <td>[si]</td>
+        <td />
+        <td>Can you see without your glasses? 你不戴眼鏡能看得見嗎？</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>September 九月(名詞)</th>
+        <th />
+        <td>[sɛpˋtɛmbɚ]</td>
+        <td />
+        <td>My mother's birthday is in September. 我媽媽的生日在九月。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>seven 七(名詞、形容詞)</th>
+        <th />
+        <td>[ˋsɛvn]</td>
+        <td />
+        <td>
+          The restaurant opens for dinner at seven o'clock.
+          餐廳在七點鐘開門供應晚餐 。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>seventeen 十七(名詞、形容詞)</th>
+        <th />
+        <td>[͵sɛvnˋtin]</td>
+        <td />
+        <td>They've been married for seventeen years. 他們結婚已經17年了。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>seventy 七十(名詞、形容詞)</th>
+        <th />
+        <td>[ˋsɛvntɪ]</td>
+        <td />
+        <td>This house was built seventy years ago. 這棟房子建於70年前。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>sheep 綿羊(名詞)</th>
+        <th />
+        <td>[ʃip]</td>
+        <td />
+        <td>He keeps a flock of sheep. 他養了一群羊。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>shelf 架子(名詞)</th>
+        <th />
+        <td>[ʃɛlf]</td>
+        <td />
+        <td>
+          He put the old books on the bottom shelf. 他將舊書放在底層書架上。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>ship 船(名詞)</th>
+        <th />
+        <td>[ʃɪp]</td>
+        <td />
+        <td>
+          They boarded a ship that was sailing the next day.
+          他們登上了一艘隔天啓航的船。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>shirt 襯衫(名詞)</th>
+        <th />
+        <td>[ʃɝt]</td>
+        <td />
+        <td>
+          The man in the shirt is very handsome. 那個穿著襯衫的男人非常英俊。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>shoe 鞋子(名詞)</th>
+        <th />
+        <td>[ʃu]</td>
+        <td />
+        <td>
+          Take off your shoes before getting in the room. 進入房間前請脫鞋。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>shop 商店(名詞)</th>
+        <th />
+        <td>[ʃɑp]</td>
+        <td />
+        <td>
+          You can get buy-one-get-one-free drinks from this shop on this
+          Saturday night. 這周 六晚上這家店的飲料有買一送一的活動。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>short 矮的、短的(形容詞)</th>
+        <th />
+        <td>[ʃɔrt]</td>
+        <td />
+        <td>
+          It's only a short walk to the station. 去車站只需走很短一段路程。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>shorts 短褲(名詞)</th>
+        <th />
+        <td>[ʃɔrts]</td>
+        <td />
+        <td>
+          He wears shorts when it's raining in case his pants get wet.
+          下雨的時候他會穿短 褲，以防褲子被淋濕。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>show 顯示、露出(動詞)；展覽、表演、秀(名詞)</th>
+        <th />
+        <td>[ʃo]</td>
+        <td />
+        <td>
+          Let me show you this new book I've just bought. 給你看看
+          我剛買的這本新書。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>shower 淋浴(名詞)</th>
+        <th />
+        <td>[ˋʃaʊɚ]</td>
+        <td />
+        <td>I take a cold shower every day. 我每天用冷水淋浴。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>sick 生病的(形容詞)</th>
+        <th />
+        <td>[sɪk]</td>
+        <td />
+        <td>
+          Mr.Lee, I feel a bit sick. May I take a leave off?
+          李老師，我不太舒服，我可以請假嗎？
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>sing 唱歌(動詞)</th>
+        <th />
+        <td>[sɪŋ]</td>
+        <td />
+        <td>
+          See! My favorite singer is singing. 看！我最喜歡的歌手正在唱歌。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>singer 歌手(名詞)</th>
+        <th />
+        <td>[ˋsɪŋɚ]</td>
+        <td />
+        <td>
+          See! My favorite singer is on TV now!
+          看！我最喜歡的歌手現在出現在電視上了！
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>sister 姊姊、妹妹(名詞)</th>
+        <th />
+        <td>[ˋsɪstɚ]</td>
+        <td />
+        <td>She is elder sister to Elsa. 她是愛爾莎的姊姊。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>sit 坐下(動詞)</th>
+        <th />
+        <td>[sɪt]</td>
+        <td />
+        <td>Sit down! 坐下!</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>six 六(名詞、形容詞)</th>
+        <th />
+        <td>[sɪks]</td>
+        <td />
+        <td>He cut the cake into six pieces. 他把蛋糕切成六塊。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>sixteen 十六(名詞、形容詞)</th>
+        <th />
+        <td>[ˋsɪksˋtin]</td>
+        <td />
+        <td>
+          We have got sixteen people coming for lunch. 我們有16個人來吃午飯。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>sixty 六十(名詞、形容詞)</th>
+        <th />
+        <td>[ˋsɪkstɪ]</td>
+        <td />
+        <td>She plans to retire at sixty. 她打算在60歲時退休。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>skirt 裙子(名詞)</th>
+        <th />
+        <td>[skɝt]</td>
+        <td />
+        <td>
+          A kilt is a kind of skirt for men in Scotland.
+          蘇格蘭短裙是蘇格蘭男士的一種裙子。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>sky 天空(名詞)</th>
+        <th />
+        <td>[skaɪ]</td>
+        <td />
+        <td>There were no clouds in the sky. 萬里無雲。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>sleep 睡覺(動詞)</th>
+        <th />
+        <td>[slip]</td>
+        <td />
+        <td>
+          My grandma often falls asleep while watching TV in the living room.
+          我的奶奶常常在 客廳看電視看到睡著。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>slow 慢的(形容詞)</th>
+        <th />
+        <td>[slo]</td>
+        <td />
+        <td>He's a slow walker. 他走起路來慢吞吞的。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>small 小的(形容詞)</th>
+        <th />
+        <td>[smɔl]</td>
+        <td />
+        <td>My bedroom is smaller than yours. 我的臥室比你的小。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>smart 聰明的(形容詞)</th>
+        <th />
+        <td>[smɑrt]</td>
+        <td />
+        <td>How smart are dolphins? 海豚到底多聰明呢？</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>smell 聞起來(動詞)</th>
+        <th />
+        <td>[smɛl]</td>
+        <td />
+        <td>
+          What's the smell from the kitchen? Is anything burnt?
+          廚房裡有什麼味道？有什麼東 西燒焦了嗎？
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>snake 蛇(名詞)</th>
+        <th />
+        <td>[snek]</td>
+        <td />
+        <td>The child was frightened by the snake. 這小孩被蛇嚇了一跳。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>snow 雪(名詞)；下雪(動詞)</th>
+        <th />
+        <td>[sno]</td>
+        <td />
+        <td>
+          Generally speaking, in winter, it does not snow in Taiwan.
+          一般來說，台灣 冬天是不下雪的。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>soccer 足球(名詞)</th>
+        <th />
+        <td>[ˋsɑkɚ]</td>
+        <td />
+        <td>Did you play soccer at school? 你在學校踢足球嗎？</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>sock 襪子(名詞)</th>
+        <th />
+        <td>[sɑk]</td>
+        <td />
+        <td>Put on your shoes and socks. 穿上你的鞋襪。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>sofa 沙發(名詞)</th>
+        <th />
+        <td>[ˋsofə]</td>
+        <td />
+        <td>Please sit on the sofa. 請在沙發上坐。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>soldier 軍人(名詞)</th>
+        <th />
+        <td>[ˋsoldʒɚ]</td>
+        <td />
+        <td>Soldiers were patrolling the streets. 士兵們正在街上巡邏。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>some 一些(限定詞、代名詞)</th>
+        <th />
+        <td></td>
+        <td />
+        <td>
+          There's some cake in the kitchen if you'd like it.
+          想吃蛋糕的話，廚房有一些。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>sometimes 有時候(副詞)</th>
+        <th />
+        <td>[ˋsʌm͵taɪmz]</td>
+        <td />
+        <td>She comes to visit us sometimes. 她有時來訪問我們。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>son 兒子(名詞)</th>
+        <th />
+        <td>[sʌn]</td>
+        <td />
+        <td>
+          We have two sons and three daughters. 我們有兩個兒子和三個女兒。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>song 歌曲(名詞)</th>
+        <th />
+        <td>[sɔŋ]</td>
+        <td />
+        <td>The students are singing songs happily. 學生們正在開心的唱歌。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>soup 湯(名詞)</th>
+        <th />
+        <td>[sup]</td>
+        <td />
+        <td>Would you like a bowl of soup? 你要不要來碗湯？</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>speak 說(動詞)</th>
+        <th />
+        <td>[spik]</td>
+        <td />
+        <td>He wanted to speak to me. 他想和我說話。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>spell 拼寫、用子母拼(動詞)</th>
+        <th />
+        <td>[spɛl]</td>
+        <td />
+        <td>How do you spell receive? receive 怎麽拼？</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>spider 蜘蛛(名詞)</th>
+        <th />
+        <td>[ˋspaɪdɚ]</td>
+        <td />
+        <td>The spider crept up the wall. 蜘蛛爬上了牆。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>spoon 湯匙(名詞)</th>
+        <th />
+        <td>[spun]</td>
+        <td />
+        <td>She ate soup with a silver spoon. 她用銀匙喝湯。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>sport 運動(名詞)</th>
+        <th />
+        <td>[sport]</td>
+        <td />
+        <td>
+          Do you know that flying a kite is also a kind of sports?
+          你知道放風箏也是一種運動嗎？
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>spring 春天(名詞)</th>
+        <th />
+        <td>[sprɪŋ]</td>
+        <td />
+        <td>
+          Most flowers bloom when spring comes. 大多數花在春天來臨時盛開。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>stand 站(動詞)</th>
+        <th />
+        <td>[stænd]</td>
+        <td />
+        <td>Stand up! 站起來!</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>star 星星(名詞)</th>
+        <th />
+        <td>[stɑr]</td>
+        <td />
+        <td>
+          Stars twinkled above them as they lay on the hill.
+          他們躺在小山上，頭頂上繁星閃爍。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>start 開始(動詞)</th>
+        <th />
+        <td>[stɑrt]</td>
+        <td />
+        <td>We'll start at six on Friday morning. 我們星期五早上六點出發。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>station 車站(名詞)</th>
+        <th />
+        <td>[ˋsteʃən]</td>
+        <td />
+        <td>
+          Our office is near the train station. 我們的辦事處在火車站附近。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>still 仍然(副詞)</th>
+        <th />
+        <td>[stɪl]</td>
+        <td />
+        <td>They are still working in the fields. 他們還在田裡工作。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>stop 停下來(動詞)</th>
+        <th />
+        <td>[stɑp]</td>
+        <td />
+        <td>The policemen stopped the fight. 警察制止了這場鬥毆。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>store 商店(名詞)</th>
+        <th />
+        <td>[stor]</td>
+        <td />
+        <td>My dream is to have a candy store. 我的夢想是開一家糖果店。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>story 故事(名詞)</th>
+        <th />
+        <td>[ˋstorɪ]</td>
+        <td />
+        <td>He writes children's stories. 他寫童話故事。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>strawberry 草莓(名詞)</th>
+        <th />
+        <td>[ˋstrɔbɛrɪ]</td>
+        <td />
+        <td>
+          Dahu Township is famous for its strawberries. 大湖鄉以草莓聞名。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>street 街道(名詞)</th>
+        <th />
+        <td>[strit]</td>
+        <td />
+        <td>
+          Our daughter lives just across the street from us.
+          我們的女兒就住在我們家街對面 。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>strong 強壯的(形容詞)</th>
+        <th />
+        <td>[strɔŋ]</td>
+        <td />
+        <td>
+          He is strong enough to lift that rock. 他力氣很大，能舉起那塊石頭。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>student 學生(名詞)</th>
+        <th />
+        <td>[ˋstjudnt]</td>
+        <td />
+        <td>
+          He was a student at the University of Chicago. 他是芝加哥大學的學生。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>study 學習(動詞)；書房(名詞)</th>
+        <th />
+        <td>[ˋstʌdɪ]</td>
+        <td />
+        <td>He is studying in his room. 他正在他的房間裡學習。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>summer 夏天(名詞)</th>
+        <th />
+        <td>[ˋsʌmɚ]</td>
+        <td />
+        <td>
+          I don't like summer because I always sweat a lot.
+          我不喜歡夏天，因為我會流很多汗 。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>sun 太陽(名詞)</th>
+        <th />
+        <td>[sʌn]</td>
+        <td />
+        <td>The sun rises in the east and sets in the west. 太陽東升西落。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>Sunday 星期日(名詞)</th>
+        <th />
+        <td>[ˋsʌnde]</td>
+        <td />
+        <td>
+          Mother's day is on the second Sunday of May.
+          母親節是五月的第二個星期日。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>sunny 晴朗的(形容詞)</th>
+        <th />
+        <td>[ˋsʌnɪ]</td>
+        <td />
+        <td>I stayed in a sunny room. 我住在一間陽光充足的房間裡。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>supermarket 超市(名詞)</th>
+        <th />
+        <td>[ˋsupɚ͵mɑrkɪt]</td>
+        <td />
+        <td>
+          She went to the supermarket to get the food for the party. 她去超市
+          買派對要吃的食物。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>sure 確定的(形容的)；當然(副詞)</th>
+        <th />
+        <td>[ʃʊr]</td>
+        <td />
+        <td>
+          I'm not sure whether our team will win. 我不能肯定我隊是否能贏。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>sweater 毛衣(名詞)</th>
+        <th />
+        <td>[ˋswɛtɚ]</td>
+        <td />
+        <td>Put a sweater on if you're cold. 如果你覺得冷就穿件毛線衫吧。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>sweep 掃(動詞)</th>
+        <th />
+        <td>[swip]</td>
+        <td />
+        <td>He sweeps the room every day. 他每天打掃房間。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>sweet 甜的(形容詞)</th>
+        <th />
+        <td>[swit]</td>
+        <td />
+        <td>The apples taste sweet. 這些蘋果很甜。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>swim 游泳(動詞)</th>
+        <th />
+        <td>[swɪm]</td>
+        <td />
+        <td>
+          We spent the day on the beach but it was too cold to go swimming.
+          我們一整天都在海 灘上，但天氣太冷，不能游泳。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>table 桌子(名詞)</th>
+        <th />
+        <td>[ˋteb!]</td>
+        <td />
+        <td>
+          When you leave, please push the chair back under the table.
+          離開前，請把椅子推回桌子裡。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>
+          take
+          拿、取得(動詞)；花費、需要(動詞)；吃、喝、服用(動詞)；搭乘(動詞)；買下(動詞)；帶領(動詞)
+        </th>
+        <th />
+        <td>[tek]</td>
+        <td />
+        <td>Take out your book. 拿出你的書。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>tall 高的(形容詞)</th>
+        <th />
+        <td>[tɔl]</td>
+        <td />
+        <td>She is a tall girl. 她是個很高的女孩。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>taste 嘗起來(動詞)；滋味、味道(名詞)</th>
+        <th />
+        <td>[test]</td>
+        <td />
+        <td>The meat tastes delicious. 這肉味道真好。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>taxi 計程車(名詞)</th>
+        <th />
+        <td>[ˋtæksɪ]</td>
+        <td />
+        <td>
+          We're running out of time. Let's take a taxi instead.
+          我們來不及了，還是搭計程 車好了。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>tea 茶(名詞)</th>
+        <th />
+        <td>[ti]</td>
+        <td />
+        <td>I prefer tea to coffee. 我喜歡茶勝於咖啡。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>teacher 老師(名詞)</th>
+        <th />
+        <td>[ˋtitʃɚ]</td>
+        <td />
+        <td>
+          Sally, Teacher Chen wants to meet you outside the classroom.
+          莎莉，陳老師想在 教室外面見你。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>teeth 牙齒(複數)(名詞)</th>
+        <th />
+        <td>[tiθ]</td>
+        <td />
+        <td>
+          Little Mary is afraid of lions because of their sharp teeth.
+          小瑪麗害怕獅子，因為牠們有鋒利的牙齒。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>telephone 電話(名詞)</th>
+        <th />
+        <td>[ˋtɛlə͵fon]</td>
+        <td />
+        <td>
+          I like to have a telephone at my bedside. 我喜歡在床邊放一部電話。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>TV 電視(名詞)</th>
+        <th />
+        <td></td>
+        <td />
+        <td>
+          My grandma often falls asleep while watching TV in the living room.
+          我的奶奶常常在客廳看電視看到睡著。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>tell 告訴、講述、說(動詞)</th>
+        <th />
+        <td>[tɛl]</td>
+        <td />
+        <td>
+          He told us how the accident happened. 他告訴我們那次事故是怎麼發生的。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>ten 十(名詞、形容詞)</th>
+        <th />
+        <td>[tɛn]</td>
+        <td />
+        <td>
+          Both my body and my mind are tired after ten-hour work.
+          經過十個小時的工作，我的身心都很疲倦。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>test 考試(名詞)</th>
+        <th />
+        <td>[tɛst]</td>
+        <td />
+        <td>
+          Please write down your name on the top of the test paper.
+          請在試卷上方寫下你的名字 。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>than 比(介係詞)</th>
+        <th />
+        <td>[ðæn]</td>
+        <td />
+        <td>He runs a lot faster than I. 他跑得比我快多了。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>there 那裡(副詞、名詞)</th>
+        <th />
+        <td>[ðɛr]</td>
+        <td />
+        <td>She lives there. 她住在那裡。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>thin 瘦的、稀疏的(形容詞)</th>
+        <th />
+        <td>[θɪn]</td>
+        <td />
+        <td>She looks thinner than before. 她看上去比過去瘦了。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>thing 東西、事物(名詞)</th>
+        <th />
+        <td>[θɪŋ]</td>
+        <td />
+        <td>
+          I can't see a thing in the dark room. 屋子裡黑漆漆的，我什麼也看不見。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>third 第三(形容詞、名詞)</th>
+        <th />
+        <td>[θɝd]</td>
+        <td />
+        <td>
+          He was the third in the speech contest. 他在演講比賽中獲得第三名。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>thirsty 口渴的(形容詞)</th>
+        <th />
+        <td>[ˋθɝstɪ]</td>
+        <td />
+        <td>Salty food makes you thirsty. 吃鹹的食品會令你口渴。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>thirteen 十三(名詞、形容詞)</th>
+        <th />
+        <td>[ˋθɝtin]</td>
+        <td />
+        <td>
+          Some people think that thirteen is an unlucky number. 一些人認為十三
+          是個不吉利的數字。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>thirty 三十(名詞、形容詞)</th>
+        <th />
+        <td>[ˋθɝtɪ]</td>
+        <td />
+        <td>
+          There must have been thirty to thirty-five people there.
+          那裡一定有三十 到三十五個人。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>three 三(名詞、形容詞)</th>
+        <th />
+        <td>[θri]</td>
+        <td />
+        <td>There are three cats under the table. 桌子底下有三隻貓。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>Thursday 星期四(名詞)</th>
+        <th />
+        <td>[ˋθɝzde]</td>
+        <td />
+        <td>Bye! See you next Thursday! 再見！下星期四見！</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>ticket 票(名詞)</th>
+        <th />
+        <td>[ˋtɪkɪt]</td>
+        <td />
+        <td>
+          How much is a one-way ticket to New York? 去紐約的單程票多少錢？
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>tiger 老虎(名詞)</th>
+        <th />
+        <td>[ˋtaɪgɚ]</td>
+        <td />
+        <td>We saw several tigers in the wild. 我們在野外看到了幾隻老虎。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>tired 疲累的、厭倦的(形容詞)</th>
+        <th />
+        <td>[taɪrd]</td>
+        <td />
+        <td>
+          I was so tired when I got home from work last night that I had a quick
+          nap. 我昨晚下班回家後很累，就小睡了一會兒。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>today 今天(名詞、副詞)</th>
+        <th />
+        <td>[təˋde]</td>
+        <td />
+        <td>Are you going to the movies today? 今天你去不去看電影？</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>together 一起(副詞)</th>
+        <th />
+        <td>[təˋgɛðɚ]</td>
+        <td />
+        <td>We used to go to yoga together. 我們過去常常一起去做瑜伽。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>tomorrow 明天(名詞)</th>
+        <th />
+        <td>[təˋmɔro]</td>
+        <td />
+        <td>I'm leaving for New York tomorrow. 我明天動身前往紐約。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>too 也(副詞)；太(副詞)</th>
+        <th />
+        <td>[tu]</td>
+        <td />
+        <td>He is too young to go to school. 他年紀太小，還不能上學。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>tooth 牙齒(名詞)</th>
+        <th />
+        <td>[tuθ]</td>
+        <td />
+        <td>I had to have a tooth out. 我不得不拔了顆牙。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>toothache 牙痛(名詞)</th>
+        <th />
+        <td>[ˋtuθ͵ek]</td>
+        <td />
+        <td>I have terrible toothache. 我的牙痛得很厲害。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>touch 觸碰(動詞)</th>
+        <th />
+        <td>[tʌtʃ]</td>
+        <td />
+        <td>She lightly touched his forehead. 她輕輕地摸了摸他的前額。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>towel 毛巾(名詞)</th>
+        <th />
+        <td>[ˋtaʊəl]</td>
+        <td />
+        <td>She wrapped her hair up in a towel. 她用毛巾把頭髮包起來。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>toy 玩具(名詞)</th>
+        <th />
+        <td>[tɔɪ]</td>
+        <td />
+        <td>The boy's favorite toy is a yoyo. 這男孩心愛的玩具是溜溜球。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>train 火車(名詞)</th>
+        <th />
+        <td>[tren]</td>
+        <td />
+        <td>She came by train. 她是乘火車來的。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>trash 垃圾(名詞)</th>
+        <th />
+        <td>[træʃ]</td>
+        <td />
+        <td>
+          Please take the bag of trash to the garbage can.
+          請將這袋垃圾拿到垃圾筒去。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>tree 樹(名詞)</th>
+        <th />
+        <td>[tri]</td>
+        <td />
+        <td>Birds are singing in the trees. 鳥在樹上歌唱。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>（短程的）旅行(名詞)</th>
+        <th />
+        <td>[trɪp]</td>
+        <td />
+        <td>They took a trip to Japan last year. 他們去年去日本旅行。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>truck 卡車(名詞)</th>
+        <th />
+        <td>[trʌk]</td>
+        <td />
+        <td>Hank is a truck driver. Hank是一位貨車司機。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>try 嘗試、試圖(動詞、名詞)</th>
+        <th />
+        <td>[traɪ]</td>
+        <td />
+        <td>Try this key. 試試這把鑰匙。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>T-shirt T恤(名詞)</th>
+        <th />
+        <td>[ˋti͵ʃɝt]</td>
+        <td />
+        <td>She was wearing jeans and a T-shirt. 她穿著牛仔褲和T恤。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>Tuesday 星期二(名詞)</th>
+        <th />
+        <td>[ˋtjuzde]</td>
+        <td />
+        <td>We'll meet at eight on Tuesday. 我們週二八點見。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>turtle 烏龜(名詞)</th>
+        <th />
+        <td>[ˋtɝt!]</td>
+        <td />
+        <td>I see two turtles. 我看見兩隻烏龜。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>twelve 十二(名詞、形容詞)</th>
+        <th />
+        <td>[twɛlv]</td>
+        <td />
+        <td>There are twelve months in a year. 一年有十二個月。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>twenty 二十(名詞、形容詞)</th>
+        <th />
+        <td>[ˋtwɛntɪ]</td>
+        <td />
+        <td>
+          She was only twenty when she had her first baby. 她生下第一個孩子時才
+          二十歲。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>two 二(名詞、形容詞)</th>
+        <th />
+        <td>[tu]</td>
+        <td />
+        <td>Two plus two equals four. 2加2等於4。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>typhoon 颱風(名詞)</th>
+        <th />
+        <td>[taɪˋfun]</td>
+        <td />
+        <td>
+          We have to stay at home due to typhoon. 由於颱風，我們不得不呆在家裡。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>umbrella 傘(名詞)</th>
+        <th />
+        <td>[ʌmˋbrɛlə]</td>
+        <td />
+        <td>
+          I left my umbrella on the bus yesterday. 我昨天把傘落在公車上了。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>uncle 伯父；叔父；姑父；姨丈；舅父(名詞)</th>
+        <th />
+        <td>[ˋʌŋk!]</td>
+        <td />
+        <td>My uncle has a good sense of humor. 我的叔叔很有幽默感。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>under 在...下方(介係詞)；在下面(副詞)；下面的(形容詞)</th>
+        <th />
+        <td>[ˋʌndɚ]</td>
+        <td />
+        <td>They were playing chess under the tree. 他們在樹下下棋。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>usually 通常(副詞)</th>
+        <th />
+        <td>[ˋjuʒʊəlɪ]</td>
+        <td />
+        <td>I usually wake up early. 我通常醒得很早。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>vacation 假期(名詞)</th>
+        <th />
+        <td>[veˋkeʃən]</td>
+        <td />
+        <td>We're taking a vacation in June. 我們六月份要去度假。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>very 非常(副詞)</th>
+        <th />
+        <td>[ˋvɛrɪ]</td>
+        <td />
+        <td>It's very cold today. 今天很冷。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>wait 等待(動詞)</th>
+        <th />
+        <td>[wet]</td>
+        <td />
+        <td>We're waiting for the bus. 我們在等公車。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>waiter 男服務生(名詞)</th>
+        <th />
+        <td>[ˋwetɚ]</td>
+        <td />
+        <td>The waiter came to take their order. 男服務生來請他們點菜。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>waitress 女服務生(名詞)</th>
+        <th />
+        <td>[ˋwetrɪs]</td>
+        <td />
+        <td>The waitress came to take their order. 女服務生來請他們點菜。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>wake 醒來、喚醒(動詞)</th>
+        <th />
+        <td>[wek]</td>
+        <td />
+        <td>I woke up at six this morning. 今天早晨我六點鐘醒來。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>walk 走路(動詞)</th>
+        <th />
+        <td>[wɔk]</td>
+        <td />
+        <td>He likes to walk. 他喜歡步行。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>wall 牆壁(名詞)</th>
+        <th />
+        <td>[wɔl]</td>
+        <td />
+        <td>
+          We had to climb over a ten-foot wall to get into the garden.
+          我們不得不翻過一堵十呎 高的牆以進到花園裡。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>want 想要(動詞)</th>
+        <th />
+        <td>[wɑnt]</td>
+        <td />
+        <td>Do you want to go to the zoo with me? 你想要和我一起去動物園嗎?</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>warm 溫暖的(形容詞)</th>
+        <th />
+        <td>[wɔrm]</td>
+        <td />
+        <td>
+          Wearing gloves can keep your hands warm in winter.
+          冬天戴手套能保暖手部。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>wash 洗(動詞)</th>
+        <th />
+        <td>[wɑʃ]</td>
+        <td />
+        <td>
+          After dinner, I always help to wash the dishes.
+          晚飯後，我總是幫忙洗碗。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>watch 手錶(名詞)；看(動詞)</th>
+        <th />
+        <td>[wɑtʃ]</td>
+        <td />
+        <td>
+          My grandma often falls asleep while watching TV in the living room.
+          我的奶奶常常在客廳看電視看到睡著。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>water 水(名詞)；給...澆水</th>
+        <th />
+        <td>[ˋwɔtɚ]</td>
+        <td />
+        <td>
+          Do you know where I can get some water? I'm so thirsty.
+          你知道哪裡有水嗎 ？我好渴。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>watermelon 西瓜(名詞)</th>
+        <th />
+        <td>[ˋwɔtɚ͵mɛlən]</td>
+        <td />
+        <td>Do you want some watermelon juice? 你要一些西瓜汁嗎？</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>way 路、方向(名詞)</th>
+        <th />
+        <td>[we]</td>
+        <td />
+        <td>Do you know the way to the restaurant? 你知道去餐館怎麼走嗎？</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>wear 穿、戴(動詞)</th>
+        <th />
+        <td>[wɛr]</td>
+        <td />
+        <td>
+          Wearing gloves can keep your hands warm in winter.
+          冬天戴手套能保暖手部。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>weather 天氣(名詞)</th>
+        <th />
+        <td>[ˋwɛðɚ]</td>
+        <td />
+        <td>
+          Due to global warming, the weather is getting hotter.
+          由於全球變暖，天氣越來越 熱。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>Wednesday 星期三(名詞)</th>
+        <th />
+        <td>[ˋwɛnzde]</td>
+        <td />
+        <td>Next Wednesday is my birthday. 下個星期三是我的生日。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>week 星期(名詞)</th>
+        <th />
+        <td>[wik]</td>
+        <td />
+        <td>She goes to the cinema once a week. 她每星期去看一次電影。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>well 好的、健康的(名詞、副詞)</th>
+        <th />
+        <td>[wɛl]</td>
+        <td />
+        <td>I can't do it as well as Marie can. 我無法做到像瑪麗那樣好。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>wet 潮濕的、濕的(形容詞)</th>
+        <th />
+        <td>[wɛt]</td>
+        <td />
+        <td>It's wet in the bathroom. Be careful! 浴室裡是濕的。請小心！</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>whale 鯨魚(名詞)</th>
+        <th />
+        <td>[hwel]</td>
+        <td />
+        <td>
+          The whale has a very distinctive call. 鯨魚有一種非常獨特的叫聲。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>white 白色的(名詞、形容詞)</th>
+        <th />
+        <td>[hwaɪt]</td>
+        <td />
+        <td>I love black and white photos. 我喜愛黑白照片。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>will 將會(助動詞)</th>
+        <th />
+        <td>[wɪl]</td>
+        <td />
+        <td>He will be home at six. 他六點回家。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>win 贏(動詞)</th>
+        <th />
+        <td>[wɪn]</td>
+        <td />
+        <td>Their team has won the game. 他們隊贏了這場比賽。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>wind 風(名詞)</th>
+        <th />
+        <td>[wɪnd]</td>
+        <td />
+        <td>There isn't enough wind to fly a kite. 風不夠大，風箏飛不起來。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>window 窗戶(名詞)</th>
+        <th />
+        <td>[ˋwɪndo]</td>
+        <td />
+        <td>
+          She sat in the window, staring into the distance.
+          她坐在窗旁，凝視著遠方。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>windy 刮風的、多風的(形容詞)</th>
+        <th />
+        <td>[ˋwɪndɪ]</td>
+        <td />
+        <td>It was a windy spring day. 那是個刮著風的春日。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>winter 冬天(名詞)</th>
+        <th />
+        <td>[ˋwɪntɚ]</td>
+        <td />
+        <td>It's cold in winter. 冬天天氣冷。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>woman 女人(名詞)</th>
+        <th />
+        <td>[ˋwʊmən]</td>
+        <td />
+        <td>
+          That little girl has grown up into a pretty woman.
+          小女孩已長成為一個漂亮的女人 。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>women 女人(複數)(名詞)</th>
+        <th />
+        <td>[ˋwɪmɪn]</td>
+        <td />
+        <td>There are four women in the room. 房間裡有四個女人。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>wonderful 很棒的、精彩的(形容詞)</th>
+        <th />
+        <td>[ˋwʌndɚfəl]</td>
+        <td />
+        <td>We've been having wonderful weather recently. 近來天氣非常好 。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>word 字(名詞)</th>
+        <th />
+        <td>[wɝd]</td>
+        <td />
+        <td>
+          Some words are more difficult to spell than others.
+          有些詞比其他的詞難拼寫。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>work 工作(名詞)</th>
+        <th />
+        <td>[wɝk]</td>
+        <td />
+        <td>I have to bring my work home today. 今天我得把工作帶回家做。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>worker 工作者(名詞)</th>
+        <th />
+        <td>[ˋwɝkɚ]</td>
+        <td />
+        <td>How many workers are there on the farm? 農場上有多少工人？</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>worry 擔心(動詞)</th>
+        <th />
+        <td>[ˋwɝɪ]</td>
+        <td />
+        <td>Don't worry. 別擔心。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>write 寫(動詞)</th>
+        <th />
+        <td>[raɪt]</td>
+        <td />
+        <td>He wrote lots of poems in his life. 他一生中寫了許多詩。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>year 年(名詞)</th>
+        <th />
+        <td>[jɪr]</td>
+        <td />
+        <td>We haven't seen him this year. 我們今年沒見過他。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>yellow 黃色(名詞、形容詞)</th>
+        <th />
+        <td>[ˋjɛlo]</td>
+        <td />
+        <td>
+          It was early autumn and the leaves were turning yellow.
+          正值初秋時節，樹葉開始轉黃。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>yesterday 昨天(名詞)</th>
+        <th />
+        <td>[ˋjɛstɚde]</td>
+        <td />
+        <td>He left for France yesterday. 他昨天動身去法國。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>young 年輕的(形容詞)</th>
+        <th />
+        <td>[jʌŋ]</td>
+        <td />
+        <td>His girlfriend's very young. 他的女朋友非常年輕。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>zebra 斑馬(名詞)</th>
+        <th />
+        <td>[ˋzibrə]</td>
+        <td />
+        <td>
+          The entire body of a zebra is marked with black and whitish stripes.
+          斑馬的全身 都有黑白條紋。
+        </td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>zero 零(名詞、形容詞)</th>
+        <th />
+        <td>[ˋzɪro]</td>
+        <td />
+        <td>There are two zeros in 1008. 在1008中有兩個零。</td>
+        <td />
+      </tr>
+      <tr />
+      <tr>
+        <th>zoo 動物園(名詞)</th>
+        <th />
+        <td>[zu]</td>
+        <td />
+        <td>What did he see in the zoo? 他在動物園裡看到什麼？</td>
+        <td />
+      </tr>
+      <tr />
+    </table>
+
+    <footer>
+      <p style="font-weight: bolder">
+        Demo Website for Bilingual Lesson Assistant by Ching-Hung Chiu
+      </p>
+      <p>National Yang Ming Chiao Tung University</p>
+      <p>College of Science (Degree Program of E-Learning)</p>
+    </footer>
+  </body>
+</html>
+
+<!--
+Attribute(註明來源):
+1. 網站的三角形Logo:
+<a href="https://www.flaticon.com/free-icons/triangle" title="triangle icons">Triangle icons created by Freepik - Flaticon</a>
+2. Copy Icon: 
+<a href="https://www.flaticon.com/free-icons/paper" title="paper icons">Paper icons created by Gregor Cresnar - Flaticon</a>
+3. 語音導讀 Icon:
+<a href="https://www.flaticon.com/free-icons/unmute" title="unmute icons">Unmute icons created by redempticon - Flaticon</a>
+4. en_to_ch Icon:
+<a href="https://www.flaticon.com/free-icons/translator" title="translator icons">Translator icons created by Freepik - Flaticon</a>
+5. ch_to_en Icon:
+<a href="https://www.flaticon.com/free-icons/translator" title="translator icons">Translator icons created by Freepik - Flaticon</a>
+6. number_list Icon:
+<a href="https://www.flaticon.com/free-icons/list" title="list icons">List icons created by Freepik - Flaticon</a>
+-->

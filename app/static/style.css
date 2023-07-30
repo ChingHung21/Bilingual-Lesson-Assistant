@@ -1,0 +1,1368 @@
+@charset "UTF-8";
+/*全域設定*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+/*index以及通用樣板設定*/
+header {
+  display: flex;
+  align-items: center;
+  background-color: #232c33;
+}
+header div.logo {
+  display: flex;
+  align-items: center;
+  flex: 5 1 400px;
+}
+header div.logo h1 {
+  color: #ff7f51;
+}
+header div.logo h1 div {
+  color: #ede7b1;
+}
+header div.logo img {
+  width: 6vw;
+  height: 6vw;
+}
+header nav {
+  flex: 2 1 400px;
+}
+header nav ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+}
+header nav ul li a {
+  color: gray;
+  text-decoration: none;
+  font-size: 2rem;
+}
+header nav ul li a:hover {
+  color: #fbfff1;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-image: linear-gradient(135deg, wheat, #fcfcff, #dbfcff);
+}
+main section.left {
+  width: 65%;
+  padding: 1rem;
+  text-align: center;
+}
+main section.left div {
+  text-align: left;
+}
+main section.left div label {
+  font-size: 1.5rem;
+}
+main section.left form textarea {
+  width: 100%;
+  height: 400px;
+  font-size: 1.2rem;
+  resize: vertical;
+}
+main section.left form .inputButton {
+  padding: 10px 30px;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 5%;
+  background-color: #008cba;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+main section.left form .inputButton:hover {
+  background-color: #0178a0;
+  font-weight: bolder;
+  box-shadow: inset;
+}
+main section.left form .inputButtonDisabled {
+  padding: 10px 30px;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 5%;
+  background-color: grey;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+main section.right {
+  width: 35%;
+  text-align: center;
+}
+main section.right div.function_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main section.right div.function_container button.function {
+  background-color: #f3f9e3;
+  border: 0.1rem solid;
+  width: 85%;
+  margin: 0.5rem;
+  text-align: center;
+  border-radius: 6px;
+}
+main section.right div.function_container button.function div {
+  font-size: 1.5rem;
+}
+main section.right div.function_container button.function img {
+  width: 3rem;
+  height: 3rem;
+  margin-top: 0.5rem;
+}
+main section.right div.function_container button:hover {
+  background-color: #294d82;
+  font-weight: bolder;
+  box-shadow: inset;
+  cursor: pointer;
+}
+main section.right div.function_container button:hover div {
+  color: #dbfcff;
+}
+
+footer {
+  background-color: #8e9aaf;
+  text-align: center;
+}
+footer p {
+  color: #e4ebe2;
+  font-size: 0.8rem;
+}
+
+.active {
+  color: white;
+  font-weight: bolder;
+}
+
+button.function_active {
+  background-color: #294d82;
+  box-shadow: inset;
+  width: 85%;
+  margin: 0.5rem;
+  text-align: center;
+  border-radius: 5%;
+}
+button.function_active div {
+  color: #dbfcff;
+  font-size: 1.6rem;
+}
+button.function_active img {
+  width: 3rem;
+  height: 3rem;
+  margin-top: 0.5rem;
+}
+
+div.voiceOption {
+  display: block;
+}
+div.voiceOption div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div.voiceOption div span {
+  font-size: 1.5rem;
+}
+div.voiceOption div img {
+  width: 35px;
+  height: 35px;
+}
+div.voiceOption select {
+  background-color: DodgerBlue;
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 0.5px;
+}
+
+/*幫助頁面*/
+div#helpContainer {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+div#helpContainer div.helpItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10px 15px 10px 15px;
+}
+div#helpContainer div.helpItem div.item {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: justify;
+  flex-direction: column;
+  margin: 10px 15px 10px 15px;
+}
+div#helpContainer div.helpItem div.item img {
+  width: 12vw;
+  height: 12vw;
+  margin: 3rem 0rem;
+}
+div#helpContainer div.helpItem div.item div {
+  font-size: 2rem;
+  font-weight: bolder;
+  height: 2rem;
+  margin-bottom: 2rem;
+}
+div#helpContainer div.helpItem div.item p {
+  font-size: 1.2rem;
+  height: 3rem;
+}
+
+/*單字頁面*/
+div#vocabularyRefer {
+  margin: 30px 0px 0px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div#vocabularyRefer div {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #376996;
+}
+div#vocabularyRefer div a {
+  color: #ffad69;
+  text-decoration: underline;
+}
+div#vocabularyRefer div a:hover {
+  color: #fa7609;
+}
+
+table#vocabularyContainer {
+  margin: 20px 10px;
+  padding: 10px 5px;
+}
+table#vocabularyContainer tr th {
+  border-bottom: 2px solid #ede6e3;
+}
+table#vocabularyContainer tr td {
+  border-bottom: 2px solid #ede6e3;
+}
+table#vocabularyContainer tr:nth-child(1) {
+  font-size: 1.2rem;
+  color: #14699e;
+  text-align: center;
+}
+
+/*關於頁面*/
+div.aboutContainer {
+  margin: 20px 10px;
+  padding: 10px 5px;
+}
+div.aboutContainer div {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0px 0px 20px 0px;
+  padding: 10px 20px 10px 20px;
+}
+div.aboutContainer div img {
+  width: 16vw;
+  height: 16vw;
+}
+div.aboutContainer div h1 {
+  background-image: linear-gradient(to left, #53f20f, #f1c40f);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+div.aboutContainer div div.content {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  font-size: 1.4rem;
+}
+
+div.referContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+}
+div.referContainer hr {
+  width: 70%;
+}
+div.referContainer a {
+  color: #ffad69;
+  text-decoration: underline;
+}
+
+/*翻譯功能頁面*/
+div.transalte_output_container {
+  text-align: center;
+  background-image: linear-gradient(135deg, #dbfcff, #fcfcff, wheat);
+}
+div.transalte_output_container p {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+div.transalte_output_container div.translate_container {
+  text-align: center;
+}
+div.transalte_output_container div.translate_container p.translate {
+  border: solid #3e517a;
+  border-width: 2px;
+  border-style: inset;
+  padding: 3rem;
+  margin: 0rem 2rem 0.5rem 2rem;
+  text-align: justify;
+  font-size: 1.2rem;
+  overflow: visible;
+}
+div.transalte_output_container div.tools {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+div.transalte_output_container div.tools div.leftTool {
+  width: 46%;
+  display: flex;
+  justify-content: flex-start;
+}
+div.transalte_output_container div.tools div.rightTool {
+  width: 46%;
+  display: flex;
+  justify-content: flex-end;
+}
+div.transalte_output_container div.tools button {
+  background-color: #f9c80e;
+  color: black;
+  border: none;
+  border-radius: 5%;
+  padding: 10px 30px;
+  margin: 0rem 2rem 0rem 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+div.transalte_output_container div.tools button i {
+  display: none;
+  color: white;
+}
+div.transalte_output_container div.tools button img {
+  width: 2rem;
+  height: 2rem;
+  vertical-align: middle;
+}
+div.transalte_output_container div.tools button:hover {
+  box-shadow: inset;
+  background-color: #d9ae13;
+}
+
+div.wordcloud {
+  display: none;
+  text-align: center;
+  background-image: linear-gradient(135deg, #ccf4ce, white, white, white, rgb(209, 211, 248));
+}
+div.wordcloud label {
+  text-align: center;
+  font-size: 1.5rem;
+}
+div.wordcloud img {
+  display: block;
+  margin: auto;
+  width: 800px;
+  height: 400px;
+}
+
+div#translateForeach {
+  background-image: linear-gradient(90deg, #081e2b, #14699e);
+}
+div#translateForeach p {
+  font-size: 1.5rem;
+  color: #f1f6b7;
+  text-align: center;
+}
+div#translateForeach div.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div#translateForeach div.container div.sentences {
+  padding: 1rem;
+  width: 70%;
+  text-align: justify;
+  font-size: 1.2rem;
+  color: #dbfcff;
+}
+div#translateForeach div.container div.audio {
+  padding: 0rem 1rem 1rem 0rem;
+  width: 30%;
+  text-align: center;
+}
+div#translateForeach hr {
+  width: 96%;
+  margin: auto;
+  border-top: 0.5px solid greenyellow;
+}
+
+/*英文摘要功能頁面*/
+div.summarize_container_en {
+  text-align: center;
+  background-image: linear-gradient(135deg, #dbfcff, #fcfcff, wheat);
+}
+div.summarize_container_en hr {
+  margin-bottom: 1rem;
+}
+div.summarize_container_en div div.original_text_container {
+  text-align: center;
+}
+div.summarize_container_en div div.original_text_container label {
+  text-align: center;
+  font-size: 1.5rem;
+}
+div.summarize_container_en div div.original_text_container p.original_text {
+  border: solid #3e517a;
+  border-width: 2px;
+  border-style: inset;
+  padding: 3rem;
+  margin: 0rem 2rem 0.5rem 2rem;
+  text-align: justify;
+  font-size: 1.2rem;
+  overflow: visible;
+}
+div.summarize_container_en div div.tools {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+div.summarize_container_en div div.tools div.leftTool {
+  width: 46%;
+  display: flex;
+  justify-content: flex-start;
+}
+div.summarize_container_en div div.tools div.rightTool {
+  width: 46%;
+  display: flex;
+  justify-content: flex-end;
+}
+div.summarize_container_en div div.tools button {
+  background-color: #f9c80e;
+  color: black;
+  border: none;
+  border-radius: 5%;
+  padding: 10px 30px;
+  margin: 0rem 2rem 0rem 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+div.summarize_container_en div div.tools button i {
+  display: none;
+  color: white;
+}
+div.summarize_container_en div div.tools button img {
+  width: 2rem;
+  height: 2rem;
+  vertical-align: middle;
+}
+div.summarize_container_en div div.tools button:hover {
+  box-shadow: inset;
+  background-color: #d9ae13;
+}
+div.summarize_container_en div div.summary_container {
+  text-align: center;
+}
+div.summarize_container_en div div.summary_container label {
+  text-align: center;
+  font-size: 1.5rem;
+}
+div.summarize_container_en div div.summary_container p.summary {
+  border: solid #3e517a;
+  border-width: 2px;
+  border-style: inset;
+  padding: 3rem;
+  margin: 0rem 2rem 0.5rem 2rem;
+  text-align: justify;
+  font-size: 1.2rem;
+  overflow: visible;
+}
+
+/*中文摘要功能頁面*/
+div.summarize_container_ch {
+  text-align: center;
+  background-image: linear-gradient(135deg, #dbfcff, #fcfcff, wheat);
+}
+div.summarize_container_ch hr {
+  margin-bottom: 1rem;
+}
+div.summarize_container_ch div div.original_text_container {
+  text-align: center;
+}
+div.summarize_container_ch div div.original_text_container label {
+  text-align: center;
+  font-size: 1.5rem;
+}
+div.summarize_container_ch div div.original_text_container p.original_text {
+  border: solid #3e517a;
+  border-width: 2px;
+  border-style: inset;
+  padding: 3rem;
+  margin: 0rem 2rem 0.5rem 2rem;
+  text-align: justify;
+  font-size: 1.2rem;
+  overflow: visible;
+}
+div.summarize_container_ch div div.tools {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+div.summarize_container_ch div div.tools div.leftTool {
+  width: 46%;
+  display: flex;
+  justify-content: flex-start;
+}
+div.summarize_container_ch div div.tools div.rightTool {
+  width: 46%;
+  display: flex;
+  justify-content: flex-end;
+}
+div.summarize_container_ch div div.tools button {
+  background-color: #f9c80e;
+  color: black;
+  border: none;
+  border-radius: 5%;
+  padding: 10px 30px;
+  margin: 0rem 2rem 0rem 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+div.summarize_container_ch div div.tools button i {
+  display: none;
+  color: white;
+}
+div.summarize_container_ch div div.tools button img {
+  width: 2rem;
+  height: 2rem;
+  vertical-align: middle;
+}
+div.summarize_container_ch div div.tools button:hover {
+  box-shadow: inset;
+  background-color: #d9ae13;
+}
+div.summarize_container_ch div div.summary_container {
+  text-align: center;
+}
+div.summarize_container_ch div div.summary_container label {
+  text-align: center;
+  font-size: 1.5rem;
+}
+div.summarize_container_ch div div.summary_container p.summary {
+  border: solid #3e517a;
+  border-width: 2px;
+  border-style: inset;
+  padding: 3rem;
+  margin: 0rem 2rem 0.5rem 2rem;
+  text-align: justify;
+  font-size: 1.2rem;
+  overflow: visible;
+}
+
+/*翻譯並摘要功能頁面*/
+div.TranslateSummarize_output_ch2en_container {
+  text-align: center;
+  background-image: linear-gradient(135deg, #dbfcff, #fcfcff, wheat);
+}
+div.TranslateSummarize_output_ch2en_container hr {
+  margin-bottom: 1rem;
+}
+div.TranslateSummarize_output_ch2en_container div div.translate_container {
+  text-align: center;
+}
+div.TranslateSummarize_output_ch2en_container div div.translate_container label {
+  text-align: center;
+  font-size: 1.5rem;
+}
+div.TranslateSummarize_output_ch2en_container div div.translate_container p.translate {
+  border: solid #3e517a;
+  border-width: 2px;
+  border-style: inset;
+  padding: 3rem;
+  margin: 0rem 2rem 0.5rem 2rem;
+  text-align: justify;
+  font-size: 1.2rem;
+  overflow: visible;
+}
+div.TranslateSummarize_output_ch2en_container div div.tools {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+div.TranslateSummarize_output_ch2en_container div div.tools div.leftTool {
+  width: 46%;
+  display: flex;
+  justify-content: flex-start;
+}
+div.TranslateSummarize_output_ch2en_container div div.tools div.rightTool {
+  width: 46%;
+  display: flex;
+  justify-content: flex-end;
+}
+div.TranslateSummarize_output_ch2en_container div div.tools button {
+  background-color: #f9c80e;
+  color: black;
+  border: none;
+  border-radius: 5%;
+  padding: 10px 30px;
+  margin: 0rem 2rem 0rem 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+div.TranslateSummarize_output_ch2en_container div div.tools button i {
+  display: none;
+  color: white;
+}
+div.TranslateSummarize_output_ch2en_container div div.tools button img {
+  width: 2rem;
+  height: 2rem;
+  vertical-align: middle;
+}
+div.TranslateSummarize_output_ch2en_container div div.tools button:hover {
+  box-shadow: inset;
+  background-color: #d9ae13;
+}
+div.TranslateSummarize_output_ch2en_container div div.summarize_container {
+  text-align: center;
+}
+div.TranslateSummarize_output_ch2en_container div div.summarize_container label {
+  text-align: center;
+  font-size: 1.5rem;
+}
+div.TranslateSummarize_output_ch2en_container div div.summarize_container p.summarize {
+  border: solid #3e517a;
+  border-width: 2px;
+  border-style: inset;
+  padding: 3rem;
+  margin: 0rem 2rem 0.5rem 2rem;
+  text-align: justify;
+  font-size: 1.2rem;
+  overflow: visible;
+}
+
+div.TranslateSummarize_output_en2ch_container {
+  text-align: center;
+  background-image: linear-gradient(135deg, #dbfcff, #fcfcff, wheat);
+}
+div.TranslateSummarize_output_en2ch_container hr {
+  margin-bottom: 1rem;
+}
+div.TranslateSummarize_output_en2ch_container div div.translate_container {
+  text-align: center;
+}
+div.TranslateSummarize_output_en2ch_container div div.translate_container label {
+  text-align: center;
+  font-size: 1.5rem;
+}
+div.TranslateSummarize_output_en2ch_container div div.translate_container p.translate {
+  border: solid #3e517a;
+  border-width: 2px;
+  border-style: inset;
+  padding: 3rem;
+  margin: 0rem 2rem 0.5rem 2rem;
+  text-align: justify;
+  font-size: 1.2rem;
+  overflow: visible;
+}
+div.TranslateSummarize_output_en2ch_container div div.tools {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+div.TranslateSummarize_output_en2ch_container div div.tools div.leftTool {
+  width: 46%;
+  display: flex;
+  justify-content: flex-start;
+}
+div.TranslateSummarize_output_en2ch_container div div.tools div.rightTool {
+  width: 46%;
+  display: flex;
+  justify-content: flex-end;
+}
+div.TranslateSummarize_output_en2ch_container div div.tools button {
+  background-color: #f9c80e;
+  color: black;
+  border: none;
+  border-radius: 5%;
+  padding: 10px 30px;
+  margin: 0rem 2rem 0rem 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+div.TranslateSummarize_output_en2ch_container div div.tools button i {
+  display: none;
+  color: white;
+}
+div.TranslateSummarize_output_en2ch_container div div.tools button img {
+  width: 2rem;
+  height: 2rem;
+  vertical-align: middle;
+}
+div.TranslateSummarize_output_en2ch_container div div.tools button:hover {
+  box-shadow: inset;
+  background-color: #d9ae13;
+}
+div.TranslateSummarize_output_en2ch_container div div.summarize_container {
+  text-align: center;
+}
+div.TranslateSummarize_output_en2ch_container div div.summarize_container label {
+  text-align: center;
+  font-size: 1.5rem;
+}
+div.TranslateSummarize_output_en2ch_container div div.summarize_container p.summarize {
+  border: solid #3e517a;
+  border-width: 2px;
+  border-style: inset;
+  padding: 3rem;
+  margin: 0rem 2rem 0.5rem 2rem;
+  text-align: justify;
+  font-size: 1.2rem;
+  overflow: visible;
+}
+
+mark {
+  background-color: #fffdaf;
+}
+
+a.tooltip {
+  position: relative;
+  color: red;
+  font-size: inherit;
+  font-weight: bolder;
+  white-space: pre-wrap;
+  text-decoration: none;
+}
+
+a.tooltip::after {
+  position: absolute;
+  width: 15em;
+  background-color: #353436;
+  content: attr(word) "  " attr(phonetic) "\a" attr(enExample) "\a" attr(chExample);
+  padding: 0em 0em 0em 1em;
+  color: white;
+  margin: auto;
+  left: -6em;
+  right: 0;
+  bottom: 1.2rem;
+  text-align: start;
+  border-radius: 0.2em;
+}
+
+a.tooltip::after {
+  display: none;
+}
+
+a.tooltip:hover:after {
+  display: block;
+}
+
+.dictionaryWrapper {
+  display: none;
+  position: fixed;
+  bottom: 8%;
+  right: 0;
+  width: 350px;
+  background: linear-gradient(89.1deg, rgb(251, 0, 83) 15.2%, rgb(179, 146, 231) 98.5%);
+  border-radius: 10px;
+  padding: 5px 0px 5px 0px;
+}
+.dictionaryWrapper .chooseDictionary {
+  display: block;
+  margin: 10px;
+}
+.dictionaryWrapper .chooseDictionary .dictionaryContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+.dictionaryWrapper .chooseDictionary .dictionaryContainer div {
+  display: block;
+  text-align: center;
+}
+.dictionaryWrapper .chooseDictionary .dictionaryContainer div img {
+  width: 70px;
+  height: 70px;
+}
+.dictionaryWrapper .chooseDictionary .dictionaryContainer div .dictionaryOption {
+  background: #16db65;
+  border: none;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 14px;
+  min-height: 30px;
+  outline: 0;
+  padding: 8px 10px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  -moz-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+.dictionaryWrapper .chooseDictionary .dictionaryContainer div .dictionaryOption:hover,
+.dictionaryWrapper .chooseDictionary .dictionaryContainer div .dictionaryActive {
+  background: #302097;
+  border: none;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 14px;
+  min-height: 30px;
+  outline: 0;
+  padding: 8px 10px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  -moz-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+.dictionaryWrapper div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dictionaryWrapper div .search {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  margin: 5px 0px 5px 0px;
+}
+.dictionaryWrapper div .search input {
+  padding-left: 10px;
+  width: 300px;
+  height: 30px;
+}
+.dictionaryWrapper div .search input:focus {
+  border: 2px solid #0096ff;
+}
+.dictionaryWrapper div .search input::-moz-placeholder {
+  color: #998fc7;
+}
+.dictionaryWrapper div .search input::placeholder {
+  color: #998fc7;
+}
+.dictionaryWrapper div .search span#searchIcon {
+  cursor: pointer;
+  position: absolute;
+  right: 30px;
+  top: calc(50% - 0.5em);
+}
+.dictionaryWrapper div .search span#closeIcon {
+  cursor: pointer;
+  position: absolute;
+  right: 3px;
+  top: calc(50% - 0.5em);
+}
+.dictionaryWrapper .info-text {
+  text-align: center;
+  font-size: 14px;
+  margin: 1px 0px 1px 0px;
+  color: black;
+}
+
+.dictionaryButton {
+  display: block;
+  position: fixed;
+  bottom: 2%;
+  right: 1%;
+  text-align: center;
+  width: 6rem;
+  cursor: pointer;
+  background: linear-gradient(to top, #b224ef 0%, #7579ff 100%);
+  color: black;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.dictionaryButton :hover,
+.dictionaryButtonActive {
+  display: block;
+  position: fixed;
+  bottom: 2%;
+  right: 1%;
+  text-align: center;
+  width: 6rem;
+  cursor: pointer;
+  background: linear-gradient(to top, #551172 0%, #3d42c2 100%);
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/*RWD設定*/
+@media screen and (max-width: 1200px) {
+  /*index以及通用樣板設定*/
+  header div.logo {
+    margin-left: 0.2rem;
+  }
+  header div.logo img {
+    width: 8vw;
+    height: 8vw;
+  }
+  header div.logo h1 {
+    font-size: 1.5rem;
+  }
+  header div.logo h1 div {
+    font-size: 1rem;
+  }
+  header nav ul li a {
+    font-size: 1.5rem;
+  }
+  main section.left div label {
+    font-size: 1rem;
+  }
+  main section.left form textarea {
+    font-size: 1rem;
+  }
+  main section.left form input {
+    font-size: 1.2rem;
+  }
+  main section.right div.function_container button.function div {
+    font-size: 1.2rem;
+  }
+  main section.right div.function_container button.function img {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  button.function_active div {
+    font-size: 1.2rem;
+  }
+  button.function_active img {
+    width: 2rem;
+    height: 2rem;
+  }
+  /*翻譯功能頁面*/
+  div.transalte_output_container p {
+    font-size: 1rem;
+  }
+  div.transalte_output_container div.translate_container p.translate {
+    font-size: 1rem;
+  }
+  div.transalte_output_container div.tools button {
+    font-size: 1rem;
+  }
+  div#translateForeach p {
+    font-size: 1rem;
+  }
+  /*英文摘要功能頁面*/
+  div.summarize_container_en div div.original_text_container label {
+    font-size: 1rem;
+  }
+  div.summarize_container_en div div.original_text_container p.original_text {
+    font-size: 1rem;
+  }
+  div.summarize_container_en div div.tools button {
+    font-size: 1rem;
+  }
+  div.summarize_container_en div div.summary_container label {
+    font-size: 1rem;
+  }
+  div.summarize_container_en div div.summary_container p.summary {
+    font-size: 1rem;
+  }
+  /*中文摘要功能頁面*/
+  div.summarize_container_ch div div.original_text_container label {
+    font-size: 1rem;
+  }
+  div.summarize_container_ch div div.original_text_container p.original_text {
+    font-size: 1rem;
+  }
+  div.summarize_container_ch div div.tools button {
+    font-size: 1rem;
+  }
+  div.summarize_container_ch div div.summary_container label {
+    font-size: 1rem;
+  }
+  div.summarize_container_ch div div.summary_container p.summary {
+    font-size: 1rem;
+  }
+  /*翻譯並摘要功能頁面*/
+  div.TranslateSummarize_output_ch2en_container div div.translate_container label {
+    font-size: 1rem;
+  }
+  div.TranslateSummarize_output_ch2en_container div div.translate_container p.translate {
+    font-size: 1rem;
+  }
+  div.TranslateSummarize_output_ch2en_container div div.tools button {
+    font-size: 1rem;
+  }
+  div.TranslateSummarize_output_ch2en_container div div.summarize_container label {
+    font-size: 1rem;
+  }
+  div.TranslateSummarize_output_ch2en_container div div.summarize_container p.summarize {
+    font-size: 1rem;
+  }
+  div.TranslateSummarize_output_en2ch_container div div.translate_container label {
+    font-size: 1rem;
+  }
+  div.TranslateSummarize_output_en2ch_container div div.translate_container p.translate {
+    font-size: 1rem;
+  }
+  div.TranslateSummarize_output_en2ch_container div div.summarize_container label {
+    font-size: 1rem;
+  }
+  div.TranslateSummarize_output_en2ch_container div div.summarize_container p.summarize {
+    font-size: 1rem;
+  }
+  div.TranslateSummarize_output_en2ch_container div.tools button {
+    font-size: 1rem;
+  }
+  /*幫助頁面*/
+  div#helpContainer div.helpItem div.item {
+    width: 32%;
+    margin: 2px;
+  }
+  div#helpContainer div.helpItem div.item img {
+    width: 20vw;
+    height: 20vw;
+  }
+  div#helpContainer div.helpItem div.item div {
+    height: 1.5rem;
+    font-size: 1.5rem;
+  }
+  div#helpContainer div.helpItem div.item p {
+    font-size: 1rem;
+    height: 3rem;
+  }
+  div.wordcloud img {
+    display: block;
+    margin: auto;
+    width: 600px;
+    height: 300px;
+  }
+}
+@media screen and (max-width: 850px) {
+  /*index以及通用樣板設定*/
+  header div.logo {
+    margin-left: 0.2rem;
+  }
+  header div.logo img {
+    width: 8vw;
+    height: 8vw;
+  }
+  header div.logo h1 {
+    font-size: 1.5rem;
+  }
+  header div.logo h1 div {
+    font-size: 1rem;
+  }
+  header nav ul li a {
+    font-size: 1.5rem;
+  }
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  main section.left {
+    width: 100%;
+  }
+  main section.left div label {
+    font-size: 1rem;
+  }
+  main section.left form textarea {
+    font-size: 1rem;
+  }
+  main section.left form input {
+    padding: 5px 10px;
+    font-size: 1.2rem;
+  }
+  main section.right {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  main section.right div.function_container {
+    width: 95%;
+  }
+  main section.right div.function_container button.function {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    margin: 0rem 0.2rem 0.2rem 0.2rem;
+  }
+  main section.right div.function_container button.function div {
+    font-size: 1.2rem;
+  }
+  main section.right div.function_container button.function img {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+  button.function_active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    margin: 0rem 0.2rem 0.2rem 0.2rem;
+    background-color: #294d82;
+    box-shadow: inset;
+    border-radius: 6px;
+  }
+  button.function_active div {
+    color: #dbfcff;
+    font-size: 1.2rem;
+  }
+  button.function_active img {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+  /*翻譯功能頁面*/
+  div.transalte_output_container p {
+    font-size: 1rem;
+  }
+  div.transalte_output_container div.translate_container p.translate {
+    font-size: 1rem;
+  }
+  div.transalte_output_container div.tools {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  div.transalte_output_container div.tools div.leftTool {
+    width: 95%;
+    justify-content: center;
+  }
+  div.transalte_output_container div.tools div.rightTool {
+    width: 95%;
+    justify-content: center;
+  }
+  div.transalte_output_container div.tools button {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px 10px;
+    margin: 0.2rem;
+    font-size: 1rem;
+  }
+  div#translateForeach p {
+    font-size: 1rem;
+  }
+  div#translateForeach div.container {
+    flex-direction: column;
+  }
+  div#translateForeach div.container div.sentence {
+    width: 100%;
+    text-align: justify;
+  }
+  div#translateForeach div.container div.audio {
+    width: 100%;
+    text-align: center;
+  }
+  /*英文摘要功能頁面*/
+  div.summarize_container_en div div.original_text_container label {
+    font-size: 1rem;
+  }
+  div.summarize_container_en div div.original_text_container p.original_text {
+    font-size: 1rem;
+  }
+  div.summarize_container_en div div.tools {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  div.summarize_container_en div div.tools div.leftTool {
+    width: 95%;
+    justify-content: center;
+  }
+  div.summarize_container_en div div.tools div.rightTool {
+    width: 95%;
+    justify-content: center;
+  }
+  div.summarize_container_en div div.tools button {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px 10px;
+    margin: 0.2rem;
+    font-size: 1rem;
+  }
+  div.summarize_container_en div div.summary_container label {
+    font-size: 1rem;
+  }
+  div.summarize_container_en div div.summary_container p.summary {
+    font-size: 1rem;
+  }
+  /*中文摘要功能頁面*/
+  div.summarize_container_ch div div.original_text_container label {
+    font-size: 1rem;
+  }
+  div.summarize_container_ch div div.original_text_container p.original_text {
+    font-size: 1rem;
+  }
+  div.summarize_container_ch div div.tools {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  div.summarize_container_ch div div.tools div.leftTool {
+    width: 95%;
+    justify-content: center;
+  }
+  div.summarize_container_ch div div.tools div.rightTool {
+    width: 95%;
+    justify-content: center;
+  }
+  div.summarize_container_ch div div.tools button {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px 10px;
+    margin: 0.2rem;
+    font-size: 1rem;
+  }
+  div.summarize_container_ch div div.summary_container label {
+    font-size: 1rem;
+  }
+  div.summarize_container_ch div div.summary_container p.summary {
+    font-size: 1rem;
+  }
+  /*翻譯並摘要功能頁面*/
+  div.TranslateSummarize_output_ch2en_container div div.translate_container label {
+    font-size: 1rem;
+  }
+  div.TranslateSummarize_output_ch2en_container div div.translate_container p.translate {
+    font-size: 1rem;
+  }
+  div.TranslateSummarize_output_ch2en_container div div.tools div.leftTool {
+    width: 46%;
+  }
+  div.TranslateSummarize_output_ch2en_container div div.tools div.rightTool {
+    width: 46%;
+  }
+  div.TranslateSummarize_output_ch2en_container div div.tools button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px 10px;
+    margin: 0.2rem;
+    font-size: 1rem;
+  }
+  div.TranslateSummarize_output_ch2en_container div div.summarize_container label {
+    font-size: 1rem;
+  }
+  div.TranslateSummarize_output_ch2en_container div div.summarize_container p.summarize {
+    font-size: 1rem;
+  }
+  div.TranslateSummarize_output_en2ch_container div div.translate_container label {
+    font-size: 1rem;
+  }
+  div.TranslateSummarize_output_en2ch_container div div.translate_container p.translate {
+    font-size: 1rem;
+    margin: 1rem 0.2rem 1rem 0.2rem;
+  }
+  div.TranslateSummarize_output_en2ch_container div div.summarize_container label {
+    font-size: 1rem;
+  }
+  div.TranslateSummarize_output_en2ch_container div div.summarize_container p.summarize {
+    font-size: 1rem;
+    margin: 1rem 0.2rem 1rem 0.2rem;
+  }
+  div.TranslateSummarize_output_en2ch_container div.tools div.leftTool {
+    width: 46%;
+  }
+  div.TranslateSummarize_output_en2ch_container div.tools div.rightTool {
+    width: 46%;
+  }
+  div.TranslateSummarize_output_en2ch_container div.tools button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px 10px;
+    margin: 0.2rem;
+    font-size: 1rem;
+  }
+  /*幫助頁面*/
+  div#helpContainer div.helpItem div.item {
+    width: 90%;
+    margin: 2px;
+  }
+  div#helpContainer div.helpItem div.item img {
+    width: 35vw;
+    height: 35vw;
+  }
+  div#helpContainer div.helpItem div.item div {
+    font-size: 1.2rem;
+    height: 1.2rem;
+  }
+  div#helpContainer div.helpItem div.item p {
+    font-size: 1rem;
+    height: 2rem;
+  }
+  div.wordcloud img {
+    display: block;
+    margin: auto;
+    width: 400px;
+    height: 200px;
+  }
+}/*# sourceMappingURL=style.css.map */

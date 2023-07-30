@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>雙語備課輔助工具</title>
+    <!--Title Icon-->
+    <link
+      rel="Shortcut Icon"
+      type="image/x-icon"
+      href="https://github.com/ChingHung21/Icons/blob/main/titleIcon.ico?raw=true"
+    />
+    <!--Google Font Setting-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+TC&display=swap"
+      rel="stylesheet"
+    />
+    <!--Link to Google Icon-->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <!--Link to css-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static', filename='/style.css')}}"
+    />
+  </head>
+  <body>
+    <!--header-->
+    <header>
+      <div class="logo">
+        <img
+        src="https://github.com/ChingHung21/Icons/blob/main/logo.png?raw=true"/
+        alt="logo" />
+        <h1>
+          雙語備課輔助工具
+          <div>Bilingual Lesson Assistant</div>
+        </h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/">首頁</a></li>
+          <li><a href="/vocabulary">單字</a></li>
+          <li><a href="/help">說明</a></li>
+          <li><a class="active" href="/about">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="aboutContainer">
+      <div>
+        <img
+          src="https://github.com/ChingHung21/Icons/blob/main/info.gif?raw=true"
+        />
+        <div class="content">
+          <h1>About</h1>
+          <ul>
+            <li>Demo名稱：雙語備課輔助工具（Bilingual Lesson Assistant）</li>
+            <li>研究主題：自然語言處理技術輔助雙語課程備課之探究</li>
+            <li>
+              研究生：邱慶弘（國立陽明交通大學理學院碩士在職專班－科技與數位學習組）
+            </li>
+            <li>指導教授：袁賢銘　教授（國立陽明交通大學資訊工程學系）</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="content">
+          <h1>Motivation</h1>
+          <p>
+            面對全球化的浪潮，我國政府提出了「2030雙語國家政策發展藍圖」，其目標是在2030年讓臺灣成為中英並重的雙語國家。因應此政策，各級學校也開始推動雙語教學，也鼓勵各科老師們使用英語進行教學。但礙於雙語教學仍在起步階段，雙語課程的相關資源並不充裕，有志實行雙語教師們往往需花費大量心力蒐集資料、自編教材。有鑑於此，本研究期望能將新興的教育科技運用在雙語課程的準備上，實做一個具有翻譯、摘要、標註重點、語音導讀功能的應用程式，使雙語教師在收集課程資料時，可以快速的中英翻譯並提取重點，以藉此減少雙語課程的備課負擔。
+          </p>
+        </div>
+        <img
+          src="https://github.com/ChingHung21/Icons/blob/main/idea.gif?raw=true"
+        />
+      </div>
+      <div>
+        <img
+          src="https://github.com/ChingHung21/Icons/blob/main/research.gif?raw=true"
+        />
+        <div class="content">
+          <h1>Research Topics</h1>
+          <ol>
+            <li>自然語言處理（Natural Language Processing）</li>
+            <li>自動翻譯（Automatic language translation）</li>
+            <li>自動文本摘要（Automatic summarization of texts）</li>
+            <li>文字轉語音（Text-To-Speech）</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <hr style="width: 85%; margin: auto" />
+    <br />
+    <div class="referContainer">
+      <section>
+        <ul>
+          <h3 style="color: darkred">網站Icon來源：</h3>
+          <li>
+            Translate Icon:
+            <a
+              href="https://www.flaticon.com/free-icons/translator"
+              title="translator icons"
+              >Translator icons created by Freepik - Flaticon</a
+            >
+          </li>
+          <li>
+            Briefing Icon:
+            <a
+              href="https://www.flaticon.com/free-icons/project"
+              title="project icons"
+              >Project icons created by Freepik - Flaticon</a
+            >
+          </li>
+          <li>
+            Audio Icon:
+            <a
+              href="https://www.flaticon.com/free-icons/unmute"
+              title="unmute icons"
+              >Unmute icons created by redempticon - Flaticon</a
+            >
+          </li>
+          <li>
+            Copy Icon:
+            <a
+              href="https://www.flaticon.com/free-icons/paper"
+              title="paper icons"
+              >Paper icons created by Gregor Cresnar - Flaticon</a
+            >
+          </li>
+          <li>
+            Number_list Icon:
+            <a
+              href="https://www.flaticon.com/free-icons/list"
+              title="list icons"
+              >List icons created by Freepik - Flaticon</a
+            >
+          </li>
+          <li>
+            Translate Icon1:
+            <a
+              href="https://www.flaticon.com/free-icons/language"
+              title="language icons"
+              >Language icons created by Freepik - Flaticon</a
+            >
+          </li>
+        </ul>
+      </section>
+      <section>
+        <ul>
+          <li>
+            Translate Icon2:
+            <a
+              href="https://www.flaticon.com/free-icons/translate"
+              title="translate icons"
+              >Translate icons created by icon wind - Flaticon</a
+            >
+          </li>
+          <li>
+            Summary Icon:
+            <a
+              href="https://www.flaticon.com/free-icons/summary"
+              title="summary icons"
+              >Summary icons created by Freepik - Flaticon</a
+            >
+          </li>
+          <li>
+            Audio Icon2:
+            <a
+              href="https://www.flaticon.com/free-icons/text-to-speech"
+              title="text to speech icons"
+              >Text to speech icons created by Freepik - Flaticon</a
+            >
+          </li>
+          <li>
+            Dictionary Icon:
+            <a
+              href="https://www.flaticon.com/free-icons/dictionary"
+              title="dictionary icons"
+              >Dictionary icons created by Freepik - Flaticon</a
+            >
+          </li>
+          <li>
+            Info Icon:
+            <a
+              href="https://www.flaticon.com/free-animated-icons/info"
+              title="info animated icons"
+              >Info animated icons created by Freepik - Flaticon</a
+            >
+          </li>
+          <li>
+            Idea Icon:
+            <a
+              href="https://www.flaticon.com/free-animated-icons/idea"
+              title="idea animated icons"
+              >Idea animated icons created by Freepik - Flaticon</a
+            >
+          </li>
+          <li>
+            Research Icon:
+            <a
+              href="https://www.flaticon.com/free-animated-icons/research"
+              title="research animated icons"
+              >Research animated icons created by Freepik - Flaticon</a
+            >
+          </li>
+          <li>
+            Voice Icon:
+            <a
+              href="https://www.flaticon.com/free-icons/voice-recognition"
+              title="voice recognition icons"
+              >Voice recognition icons created by Kharisma - Flaticon</a
+            >
+          </li>
+        </ul>
+      </section>
+    </div>
+    <br />
+    <footer>
+      <p style="font-weight: bolder">
+        Demo Website for Bilingual Lesson Assistant by Ching-Hung Chiu
+      </p>
+      <p>National Yang Ming Chiao Tung University</p>
+      <p>College of Science (Degree Program of E-Learning)</p>
+    </footer>
+  </body>
+</html>
+
+<!--
+Attribute(註明來源):
+首頁:
+Translate Icon:
+<a href="https://www.flaticon.com/free-icons/translator" title="translator icons">Translator icons created by Freepik - Flaticon</a>
+Briefing Icon:
+<a href="https://www.flaticon.com/free-icons/project" title="project icons">Project icons created by Freepik - Flaticon</a>
+Audio Icon:
+<a href="https://www.flaticon.com/free-icons/unmute" title="unmute icons">Unmute icons created by redempticon - Flaticon</a>
+Voice icon:
+<a href="https://www.flaticon.com/free-icons/voice-recognition" title="voice recognition icons">Voice recognition icons created by Kharisma - Flaticon</a>
+
+功能頁面:
+Copy Icon: 
+<a href="https://www.flaticon.com/free-icons/paper" title="paper icons">Paper icons created by Gregor Cresnar - Flaticon</a>
+Number_list Icon:
+<a href="https://www.flaticon.com/free-icons/list" title="list icons">List icons created by Freepik - Flaticon</a>
+
+說明頁面:
+Translate Icon1:
+<a href="https://www.flaticon.com/free-icons/language" title="language icons">Language icons created by Freepik - Flaticon</a>
+Translate Icon2:
+<a href="https://www.flaticon.com/free-icons/translate" title="translate icons">Translate icons created by icon wind - Flaticon</a>
+Summary Icon:
+<a href="https://www.flaticon.com/free-icons/summary" title="summary icons">Summary icons created by Freepik - Flaticon</a>
+Audio Icon:
+<a href="https://www.flaticon.com/free-icons/text-to-speech" title="text to speech icons">Text to speech icons created by Freepik - Flaticon</a>
+Dictionary Icon:
+<a href="https://www.flaticon.com/free-icons/dictionary" title="dictionary icons">Dictionary icons created by Freepik - Flaticon</a>
+
+關於頁面:
+info:
+<a href="https://www.flaticon.com/free-animated-icons/info" title="info animated icons">Info animated icons created by Freepik - Flaticon</a>
+idea:
+<a href="https://www.flaticon.com/free-animated-icons/idea" title="idea animated icons">Idea animated icons created by Freepik - Flaticon</a>
+research:
+<a href="https://www.flaticon.com/free-animated-icons/research" title="research animated icons">Research animated icons created by Freepik - Flaticon</a>
+-->
